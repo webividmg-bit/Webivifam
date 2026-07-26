@@ -125,11 +125,14 @@ const ContactUsForm = forwardRef(({ className, ...props }, ref) => {
               </option>
 
               <option value="SEO">SEO</option>
+              <option value="Ai Videos">Ai Videos</option>
               <option value="App Development">App Development</option>
               <option value="Website Designing">Website Designing</option>
               <option value="Digital Marketing">Digital Marketing</option>
               <option value="Graphic Designing">Graphic Designing</option>
               <option value="Website Development">Website Development</option>
+              <option value="Social Media Marketing">Social Media Marketing</option>
+              <option value="Meta & Non-Mets Ads">Meta & Non-Mets Ads</option>
             </select>
           </div>
 
