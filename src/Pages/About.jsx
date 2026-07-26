@@ -6,10 +6,11 @@ import { useGSAP } from "@gsap/react";
 // Components
 import Line from "../Components/Common/Line";
 import Mission from "../Components/Sections/Mission";
-import Reviews from "../Components/Sections/Reviews"; 
+import Reviews from "../Components/Sections/Reviews";
 import Footer from "../Components/Sections/Common/Footer";
 import NavBar from "../Components/Sections/Common/NavBar";
 import PageHeading from "../Components/Common/PageHeading";
+import Team from "../Components/Sections/Team";
 
 function About() {
   const pageRef = useRef();
@@ -70,20 +71,43 @@ function About() {
           {/* Background */}
           <img
             src="/Images/Bg_1.png"
-            alt=""
+            alt="Background"
             className="hero-bg absolute inset-0 h-full w-full object-cover opacity-10"
           />
 
           <div className="relative z-10 mx-auto flex max-w-[1450px] flex-col-reverse items-center gap-14 px-6 sm:px-10 lg:flex-row lg:gap-24 lg:px-20">
             {/* Left */}
             <div className="hero-content flex-1">
-              <h2 className="hero-title font-[Poppins] text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[52px]">
-                WEBEIVI Agency -
-                <br />
-                <span className="bg-gradient-to-b from-white via-[#D8D8D8] to-[#4D4D4D] bg-clip-text text-transparent">
-                  Your Trusted Digital Partner
+              {/* Heading */}
+              <div className="hero-title relative z-10 mb-5 flex flex-col items-start sm:gap-2">
+                <span
+                  className="
+                  font-[Poppins]
+                  font-bold
+                  text-white
+                  text-4xl
+                  sm:text-5xl
+                  "
+                >
+                  Building Businesses That Deserve to Be Seen,
                 </span>
-              </h2>
+
+                <span
+                  className="
+                  bg-gradient-to-b
+                  from-white
+                  to-[#4D4D4D]
+                  bg-clip-text
+                  text-transparent
+                  font-[Poppins]
+                  font-bold
+                  text-4xl
+                  sm:text-5xl
+                  "
+                >
+                  Trusted, and Chosen.
+                </span>
+              </div>
 
               <div className="hero-line my-8">
                 <Line />
@@ -91,30 +115,31 @@ function About() {
 
               <div className="hero-text space-y-7">
                 <p className="text-base leading-8 text-gray-300 lg:text-lg lg:leading-9">
-                  WEBEIVI Agency was founded with a mission to help businesses
-                  establish a strong digital presence through innovative design,
-                  scalable development, and data-driven marketing strategies.
+                  WEBIVIFAM was founded with a simple belief: businesses
+                  shouldn't have to struggle for visibility in a digital world
+                  full of noise.
                 </p>
 
                 <p className="text-base leading-8 text-gray-300 lg:text-lg lg:leading-9">
-                  Our experienced team combines creativity with technology to
-                  build websites, mobile applications, and marketing campaigns
-                  that generate measurable business growth while maintaining
-                  exceptional user experiences.
+                  We are a growth-focused digital agency that combines strategy,
+                  creativity, technology, and innovation to help businesses
+                  build stronger brands, generate quality leads, and create
+                  meaningful customer experiences. Unlike traditional agencies
+                  that focus only on services, we focus on outcomes.
                 </p>
 
                 <p className="text-base leading-8 text-gray-300 lg:text-lg lg:leading-9">
-                  From startups to enterprise organizations, we provide complete
-                  digital solutions including UI/UX design, web development,
-                  branding, SEO, digital marketing, and business automation.
-                  Every project is carefully planned and executed with
-                  transparency and long-term success in mind.
+                  From startups launching their first product to established
+                  businesses looking to scale, our mission remains the same—to
+                  create digital solutions that drive measurable growth.
                 </p>
 
                 <p className="text-base leading-8 text-gray-300 lg:text-lg lg:leading-9">
-                  Our commitment is simple — deliver premium quality work, build
-                  lasting relationships, and help our clients stay ahead in
-                  today's competitive digital world.
+                  In today's rapidly evolving digital landscape, success
+                  requires more than visibility. WEBIVIFAM helps businesses
+                  leverage AI, marketing, development, and automation to create
+                  meaningful customer experiences, accelerate growth, and stay
+                  ahead of the competition.
                 </p>
               </div>
             </div>
@@ -123,6 +148,7 @@ function About() {
       </div>
 
       <Mission />
+      <Team />
       <Reviews />
       <Footer />
     </div>

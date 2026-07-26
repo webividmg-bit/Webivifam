@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from "react-router";
 
 // Components
 import Line from "../Components/Common/Line";
@@ -11,66 +12,12 @@ import Footer from "../Components/Sections/Common/Footer";
 import Button from "../Components/Common/Buttons/Button";
 import BlogCard from "../Components/Common/Cards/BlogCard";
 
-// Configs
-const BLOGS = [
-  {
-    image: "https://picsum.photos/600/400?random=1",
-    day: "17",
-    month: "Feb",
-    author: "WEBEIVI Agency",
-    title: "Google Partner in India",
-    description:
-      "An Ultimate Guide To Choosing The Perfect Google Premier Partner in India!",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=1",
-    day: "17",
-    month: "Feb",
-    author: "WEBEIVI Agency",
-    title: "Google Partner in India",
-    description:
-      "An Ultimate Guide To Choosing The Perfect Google Premier Partner in India!",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=2",
-    day: "23",
-    month: "May",
-    author: "WEBEIVI Agency",
-    title: "Best PPC Company in Delhi",
-    description:
-      "Boost your business with high-converting PPC campaigns managed by experienced marketing professionals.",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=2",
-    day: "23",
-    month: "May",
-    author: "WEBEIVI Agency",
-    title: "Best PPC Company in Delhi",
-    description:
-      "Boost your business with high-converting PPC campaigns managed by experienced marketing professionals.",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=3",
-    day: "08",
-    month: "Apr",
-    author: "WEBEIVI Agency",
-    title: "Top 10 Best Digital Marketing Agency",
-    description:
-      "Discover the leading digital marketing agencies and choose the perfect partner for your business growth.",
-  },
-  {
-    image: "https://picsum.photos/600/400?random=3",
-    day: "08",
-    month: "Apr",
-    author: "WEBEIVI Agency",
-    title: "Top 10 Best Digital Marketing Agency",
-    description:
-      "Discover the leading digital marketing agencies and choose the perfect partner for your business growth.",
-  },
-];
+// Data
+import blogs from "../Data/blogs.json";
 
 function Blogs() {
   const pageRef = useRef();
+  const navigate = useNavigate();
 
   useGSAP(
     () => {
@@ -172,18 +119,19 @@ function Blogs() {
             lg:px-20
            "
           >
-            {BLOGS.map((blog, index) => (
+            {blogs?.map((blog, index) => (
               <div
                 key={index}
                 className="blog-card overflow-hidden rounded-2xl"
               >
                 <BlogCard
-                  image={blog.image}
-                  day={blog.day}
+                  image={blog.thumbnail}
+                  day={blog.year}
                   month={blog.month}
                   author={blog.author}
                   title={blog.title}
-                  description={blog.description}
+                  description={blog.metaDescription}
+                  onReadNow={() => navigate(`/blogs/read_blog/${index}`)}
                 />
               </div>
             ))}

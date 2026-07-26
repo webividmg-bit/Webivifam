@@ -9,6 +9,8 @@ gsap.registerPlugin(useGSAP); // register the hook to avoid React version discre
 // Icons
 import {
   FaFacebookF,
+  FaThreads,
+  FaYoutube,
   FaInstagram,
   FaLinkedinIn,
   FaXTwitter,
@@ -23,19 +25,23 @@ import CopyButton from "../../Common/Buttons/CopyButton";
 const SOCIAL_LINKS = [
   {
     icon: FaFacebookF,
-    path: "https://facebook.com",
-  },
-  {
-    icon: FaXTwitter,
-    path: "https://x.com",
+    path: "https://www.facebook.com/share/19HtqPnYpH/?mibextid=wwXIfr",
   },
   {
     icon: FaLinkedinIn,
-    path: "https://linkedin.com",
+    path: "https://www.linkedin.com/in/sanjana-verma-46711b203?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     icon: FaInstagram,
-    path: "https://instagram.com",
+    path: "https://www.instagram.com/webivi_fam_agency?igsh=MWhrdWg1OXZyejR4MA%3D%3D&utm_source=qr",
+  },
+  {
+    icon: FaYoutube,
+    path: "https://youtube.com/@webividmg?si=pZQJT7zMCXNQ6vQh",
+  },
+  {
+    icon: FaThreads,
+    path: "https://www.threads.com/@sanjjana_verma?igshid=NTc4MTIwNjQ2YQ==",
   },
 ];
 
@@ -97,16 +103,18 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
       {/* TOP BAR */}
       <div
         ref={topBarRef}
-        className="hidden lg:block relative z-50 w-full border-b border-[#3C4BBF40]"
+        className="hidden lg:block relative z-50 w-full border-b border-[#3C4BBF40] backdrop-blur-md"
       >
         <div className="mx-auto flex h-12 items-center justify-between px-14">
           {/* LEFT */}
           <div className="flex items-center gap-6 text-[14px] font-[Poppins] text-gray-300">
             {/* PHONE */}
-            <CopyButton icon={Phone}>+91 98765 43210</CopyButton>
+            {/* <CopyButton icon={Phone}>+91 98765 43210</CopyButton> */}
 
             {/* EMAIL */}
-            <CopyButton icon={Mail}>info@webivifam.com</CopyButton>
+            <CopyButton icon={Mail} value={"Webividmg@gmail.com"}>
+              Webividmg@gmail.com
+            </CopyButton>
           </div>
 
           {/* RIGHT */}
@@ -114,11 +122,13 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
             {/* SOCIAL LINKS */}
             <div className="flex items-center gap-4 text-[18px] text-gray-300">
               {SOCIAL_LINKS.map(({ icon: Icon, path }, index) => (
-                <SmButton key={index} className="cursor-pointer">
-                  <div className="p-1">
-                    <Icon />
-                  </div>
-                </SmButton>
+                <Link target="_blank" key={index} to={path}>
+                  <SmButton className="cursor-pointer">
+                    <div className="p-1">
+                      <Icon />
+                    </div>
+                  </SmButton>
+                </Link>
               ))}
             </div>
           </div>
@@ -126,7 +136,7 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
       </div>
 
       {/* NAV BAR */}
-      <nav ref={navRef} className="relative z-50 w-full h-fit">
+      <nav ref={navRef} className="relative z-50 w-full h-fit backdrop-blur-md">
         {/* MAIN */}
         <div className="flex items-center justify-between px-6 lg:px-14 py-5">
           {/* LOGO */}
@@ -139,10 +149,8 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
           {/* NAV LINKS */}
           <div className="hidden lg:flex items-center gap-12">
             {NAV_LINKS?.map(({ label, path }, index) => (
-              <Link to={path}>
-                <SmButton key={index} className="cursor-pointer">
-                  {label}
-                </SmButton>
+              <Link key={index} to={path}>
+                <SmButton className="cursor-pointer">{label}</SmButton>
               </Link>
             ))}
           </div>
@@ -177,10 +185,9 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
         </div>
 
         <div className="mt-10 flex flex-col">
-          {NAV_LINKS?.map(({ label, path }) => (
-            <Link to={path}>
+          {NAV_LINKS?.map(({ label, path }, index) => (
+            <Link key={index} to={path}>
               <button
-                key={label}
                 className="px-8 py-4 text-left text-white hover:bg-[#3C4BBF20] transition"
                 onClick={() => setIsOpen(false)}
               >

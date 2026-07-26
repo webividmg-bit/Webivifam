@@ -172,27 +172,12 @@ function Boost() {
             text-gray-300
           "
           >
-            Digital Marketing is already pleased to have you here! As you're
-            here to meet your coveted marketing goals and expand your online
-            business, we hereby commit you to cater the best among the rest of
-            the solutions. With high innovation, smart approaches and multi-task
-            skills, Digital Marketing King is always the optimal choice to make
-            for your marketing & advertising needs.
-          </p>
-
-          <p
-            className="
-            mt-5
-            font-[Poppins]
-            text-base
-            sm:text-[17px]
-            leading-8
-            text-gray-300
-          "
-          >
-            We believe in facilitating business roles in diverse aspects so as
-            to help business owners and entrepreneurs achieve organisational
-            milestones every now and then.
+            Boost your business with WEBIVIFAM by partnering with a team that
+            combines creativity, technology, and data-driven strategies to
+            deliver real results. From building powerful digital experiences to
+            driving qualified leads and strengthening your brand, we help
+            businesses grow faster, scale smarter, and stay ahead of the
+            competition with solutions tailored to their unique goals.
           </p>
         </div>
       </div>

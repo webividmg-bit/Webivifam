@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 const BlogCard = forwardRef(
   (
-    { image, day, month, author, title, description, className, ...props },
+    { image, day, month, author, title, description, onReadNow, className, ...props },
     ref,
   ) => {
     return (
@@ -109,7 +109,7 @@ const BlogCard = forwardRef(
               {description}
             </p>
 
-            <Button uppercase={false} className="mt-8 cursor-pointer">
+            <Button onClick={onReadNow} uppercase={false} className="mt-8 cursor-pointer">
               Read Now
             </Button>
           </div>

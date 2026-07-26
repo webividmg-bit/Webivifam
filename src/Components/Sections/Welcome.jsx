@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -91,7 +92,7 @@ function Welcome() {
             lg:text-left
           "
           >
-            Welcome to WEBEIVI AGENCY
+            Why Businesses Choose WEBIVIFAM
           </h2>
         </div>
 
@@ -121,15 +122,10 @@ function Welcome() {
             text-gray-300
           "
           >
-            Digital Marketing King is the Best Digital Marketing Agency In India
-            and serves globally. We have been serving in business marketing &
-            promotions for more than a decade and encompass a team of truly
-            skilled & professional experts. With 360-degree digital marketing
-            solutions, we serve a comprehensive range of IT services, including
-            digital marketing, content management, web development, app
-            development, UI/UX designing, and many more. We're certain that our
-            super-knowledgeable and reliable professionals will content you with
-            advanced and high-end technological endeavours.
+            At WEBIVIFAM, every project is approached with a long-term vision.
+            We believe sustainable growth comes from aligning branding,
+            technology, SEO, marketing, and customer experience into one
+            powerful ecosystem.
           </p>
 
           <p
@@ -143,8 +139,9 @@ function Welcome() {
             text-gray-300
           "
           >
-            Not only this, but as we all know that today's advancements have
-            reached the pinnacle, and so has our adept team.
+            Our team works closely with every client to understand their goals,
+            challenges, and market opportunities before developing customized
+            strategies that create real business impact.
           </p>
         </div>
 
@@ -164,9 +161,13 @@ function Welcome() {
           sm:gap-6
         "
         >
+        <Link to="/about_us">
           <Button className="w-fit cursor-pointer sm:w-auto">Learn More</Button>
+        </Link>
 
+        <Link to="/contact_us">
           <Button className="cursor-pointer sm:w-auto">Contact Us</Button>
+          </Link>
         </div>
       </div>
     </section>

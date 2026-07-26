@@ -2,9 +2,6 @@ import React, { useRef } from "react";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // Icons
 import {
@@ -25,6 +22,7 @@ import Footer from "../Components/Sections/Common/Footer";
 import PageHeading from "../Components/Common/PageHeading";
 import ContactUsForm from "../Components/Common/ContactUsForm";
 import AnalyticCard from "../Components/Common/Cards/AnalyticCard";
+import CopyButton from "../Components/Common/Buttons/CopyButton";
 
 const STATS = [
   {
@@ -139,44 +137,39 @@ function Contact() {
                 "
               >
                 <h2 className="mb-5 text-3xl font-bold text-white lg:text-[42px]">
-                  WEBEIVI Agency
+                  WEBIVIFAM Agency
                 </h2>
 
                 <Line className="mb-8 lg:mb-10" />
 
                 <div className="space-y-7">
                   <div className="flex items-center gap-5">
-                    <Phone className="text-[#2BB3FF]" />
-                    <span className="text-lg text-gray-300">
-                      +91-9910075663
-                    </span>
+                    {/* EMAIL */}
+                    <CopyButton
+                      size="lg"
+                      icon={Mail}
+                      value={"Webividmg@gmail.com"}
+                    >
+                      Webividmg@gmail.com
+                    </CopyButton>
                   </div>
 
                   <div className="flex items-center gap-5">
-                    <Phone className="text-[#2BB3FF]" />
-                    <span className="text-lg text-gray-300">
-                      +91-8130253578
-                    </span>
+                    {/* EMAIL */}
+                    <CopyButton
+                      size="lg"
+                      icon={Mail}
+                      value={"webividmg@icloud.com"}
+                    >
+                      webividmg@icloud.com
+                    </CopyButton>
                   </div>
 
-                  <div className="flex items-center gap-5">
-                    <Mail className="text-[#2BB3FF]" />
-                    <span className="text-lg text-gray-300">
-                      info@webeivi.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-start gap-5">
+                  <div className="flex items-start gap-2">
                     <MapPin className="mt-1 text-[#2BB3FF]" />
 
                     <span className="text-lg leading-8 text-gray-300">
-                      A-3A, 1st Floor,
-                      <br />
-                      Milap Nagar,
-                      <br />
-                      Uttam Nagar,
-                      <br />
-                      New Delhi - 110059
+                      Chandpur Highway, <br /> Yamunanagar
                     </span>
                   </div>
                 </div>

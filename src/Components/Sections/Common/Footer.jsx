@@ -1,24 +1,45 @@
 import React, { useRef } from "react";
+import { Link } from "react-router";
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
+// Icons
 // Icons
 import {
   FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
+  FaThreads,
+  FaYoutube,
   FaInstagram,
-} from "react-icons/fa";
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 
 // Component
 import Line from "../../Common/Line";
 import Button from "../../Common/Buttons/Button";
 import IconButton from "../../Common/Buttons/IconButton";
+import CopyButton from "../../Common/Buttons/CopyButton";
+
+const SOCIAL_LINKS = [
+  {
+    icon: FaFacebookF,
+    path: "https://www.facebook.com/share/19HtqPnYpH/?mibextid=wwXIfr",
+  },
+  {
+    icon: FaLinkedinIn,
+    path: "https://www.linkedin.com/company/webivi-agency/",
+  },
+  {
+    icon: FaInstagram,
+    path: "https://www.instagram.com/webivi_fam_agency?igsh=MWhrdWg1OXZyejR4MA%3D%3D&utm_source=qr",
+  },
+  {
+    icon: FaThreads,
+    path: "https://www.threads.com/@sanjjana_verma?igshid=NTc4MTIwNjQ2YQ==",
+  },
+];
 
 const FOOTER_SECTIONS = [
   {
@@ -69,23 +90,13 @@ const FOOTER_SECTIONS = [
 ];
 
 const QUICK_LINKS = [
-  "Home",
-  "About Us",
-  "Portfolio",
-  "Blog",
-  "FAQ",
-  "Payment Option",
-  "Contact Us",
-];
-
-const USEFUL_LINKS = [
-  "Terms & Conditions",
-  "Privacy Policy",
-  "Policy",
-  "Feedback",
-  "Career",
-  "Sitemap",
-  "Pay Online",
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about_us" },
+  { label: "Our Sercices", path: "/services" },
+  // { label: "Portfolio", path: "/portfolio" },
+  { label: "Blog", path: "/blogs" },
+  // { label: "FAQ", path: "/faq" },
+  { label: "Contact Us", path: "/contact_us" },
 ];
 
 function Footer() {
@@ -167,17 +178,18 @@ function Footer() {
           ref={topRef}
           className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-12"
         >
-          {FOOTER_SECTIONS.map((section) => (
-            <div key={section.title}>
+          {FOOTER_SECTIONS.map((section, index) => (
+            <div key={index}>
               <h3 className="mb-4 font-[Poppins] text-xl sm:text-2xl font-semibold text-white">
                 {section.title}
               </h3>
 
               <Line className="mb-6" />
 
-              <ul className="space-y-3 sm:space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {section.links.map((item) => (
-                  <li
+                  <Link
+                    to={"/services"}
                     key={item}
                     className="group relative flex w-fit cursor-pointer items-center gap-3 overflow-hidden text-sm sm:text-base lg:text-[17px] text-gray-300 transition hover:text-[#2BB3FF]"
                   >
@@ -189,9 +201,9 @@ function Footer() {
                     {item}
 
                     <hr className="absolute bottom-0 w-full -translate-x-[102%] transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:text-[#2BB3FF]" />
-                  </li>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -211,29 +223,28 @@ function Footer() {
             </h3>
 
             <div className="mt-8 space-y-5">
-              <div className="flex items-center gap-4 text-gray-300">
-                <Phone size={18} className="text-[#2BB3FF]" />
-                +91-9910075663
-              </div>
-
-              <div className="flex items-center gap-4 text-gray-300">
-                <Phone size={18} className="text-[#2BB3FF]" />
-                +91-8130253578
+              <div className="flex items-center gap-4 text-gray-300 break-all">
+                {/* EMAIL */}
+                <CopyButton
+                  size="md"
+                  icon={Mail}
+                  value={"webividmg@icloud.com"}
+                >
+                  webividmg@icloud.com
+                </CopyButton>
               </div>
 
               <div className="flex items-center gap-4 text-gray-300 break-all">
-                <Mail size={18} className="text-[#2BB3FF]" />
-                info@digitalking.com
+                {/* EMAIL */}
+                <CopyButton size="md" icon={Mail} value={"Webividmg@gmail.com"}>
+                  Webividmg@gmail.com
+                </CopyButton>
               </div>
 
-              <div className="flex items-start gap-4 text-gray-300">
+              <div className="flex items-start gap-2 text-gray-300">
                 <MapPin size={18} className="mt-1 shrink-0 text-[#2BB3FF]" />
 
-                <span>
-                  A-3A, 1st Floor, Milap Nagar,
-                  <br />
-                  Uttam Nagar, New Delhi
-                </span>
+                <span>Chandpur Highway Yamunanagar</span>
               </div>
             </div>
 
@@ -244,15 +255,11 @@ function Footer() {
             <Line className="mb-8" />
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-              {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map(
-                (Icon, index) => (
-                  <IconButton
-                    key={index}
-                    className="cursor-pointer"
-                    icon={Icon}
-                  />
-                ),
-              )}
+              {SOCIAL_LINKS.map(({ icon, path }, index) => (
+                <Link target="_blank" to={path} key={index}>
+                  <IconButton icon={icon} className="cursor-pointer" />
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -264,10 +271,11 @@ function Footer() {
 
             <Line className="mb-7" />
 
-            <ul className="space-y-4 sm:space-y-5">
-              {QUICK_LINKS.map((item) => (
-                <li
-                  key={item}
+            <div className="space-y-4 sm:space-y-5">
+              {QUICK_LINKS?.map(({ label, path }, index) => (
+                <Link
+                  key={index}
+                  to={path}
                   className="group relative flex w-fit cursor-pointer items-center gap-3 overflow-hidden text-gray-300 transition hover:text-[#2BB3FF]"
                 >
                   <ArrowRight
@@ -275,39 +283,12 @@ function Footer() {
                     className="transition group-hover:translate-x-1"
                   />
 
-                  {item}
+                  {label}
 
                   <hr className="absolute bottom-0 w-full -translate-x-[102%] transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:text-[#2BB3FF]" />
-                </li>
+                </Link>
               ))}
-            </ul>
-          </div>
-
-          {/* USEFUL LINKS */}
-          <div>
-            <h3 className="mb-4 text-2xl sm:text-[28px] font-semibold text-white">
-              Useful Links
-            </h3>
-
-            <Line className="mb-7" />
-
-            <ul className="space-y-4 sm:space-y-5">
-              {USEFUL_LINKS.map((item) => (
-                <li
-                  key={item}
-                  className="group relative flex w-fit cursor-pointer items-center gap-3 overflow-hidden text-gray-300 transition hover:text-[#2BB3FF]"
-                >
-                  <ArrowRight
-                    size={16}
-                    className="transition group-hover:translate-x-1"
-                  />
-
-                  {item}
-
-                  <hr className="absolute bottom-0 w-full -translate-x-[102%] transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:text-[#2BB3FF]" />
-                </li>
-              ))}
-            </ul>
+            </div>
           </div>
 
           {/* CTA */}
@@ -318,7 +299,7 @@ function Footer() {
             <div className="flex h-44 w-44 sm:h-52 sm:w-52 lg:h-56 lg:w-56 items-center justify-center rounded-full border-4 border-dashed border-[#2BB3FF40] bg-gradient-to-br from-[#11162E] to-[#090B15] shadow-[0_0_40px_rgba(43,179,255,.2)]">
               <div className="text-center">
                 <h2 className="text-4xl sm:text-5xl font-bold text-[#2BB3FF]">
-                  13+
+                  4+
                 </h2>
 
                 <p className="mt-2 text-base sm:text-lg text-gray-300">
@@ -327,12 +308,14 @@ function Footer() {
               </div>
             </div>
 
-            <Button
-              variant="filled"
-              className="mt-8 lg:mt-10 w-fit sm:w-auto cursor-pointer text-center"
-            >
-              LET'S DISCUSS <br /> YOUR PROJECT
-            </Button>
+            <Link to={"/contact_us"}>
+              <Button
+                variant="filled"
+                className="mt-8 lg:mt-10 w-fit sm:w-auto cursor-pointer text-center"
+              >
+                LET'S DISCUSS <br /> YOUR PROJECT
+              </Button>
+            </Link>
           </div>
         </div>
 

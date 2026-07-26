@@ -1,10 +1,8 @@
 import React, { useRef } from "react";
+import { Link } from "react-router";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // Components
 import Line from "../Common/Line";
@@ -127,10 +125,11 @@ function Mission() {
               lg:leading-[36px]
             "
           >
-            WEBEIVI Agency embraces the latest technologies and modern
-            strategies to deliver exceptional digital experiences. Our team
-            carefully studies every project, understands business goals, and
-            creates tailored solutions that drive measurable growth.
+            At WEBIVIFAM, our mission is to empower businesses with innovative
+            digital solutions that drive sustainable growth. We combine
+            technology, creativity, and data-driven strategies to help brands
+            build a strong online presence, attract the right audience, and
+            achieve measurable business success.
           </p>
 
           <p
@@ -144,15 +143,17 @@ function Mission() {
               lg:leading-[36px]
             "
           >
-            We believe in transparency, collaboration, and innovation. Through
-            creative thinking, reliable development, and strategic execution, we
-            help businesses strengthen their online presence, connect with their
-            audience, and achieve long-term success while saving valuable time
-            and resources.
+            We are committed to delivering high-quality services through
+            collaboration, transparency, and continuous innovation. By
+            leveraging modern technologies, AI-powered solutions, and strategic
+            marketing, we help businesses adapt, scale confidently, and stay
+            ahead in an ever-evolving digital world.
           </p>
 
           <div className="mission-button mt-8 lg:mt-10">
-            <Button className="cursor-pointer">Learn More</Button>
+            <Link to={"/about_us"}>
+              <Button className="cursor-pointer">Learn More</Button>
+            </Link>
           </div>
         </div>
       </div>

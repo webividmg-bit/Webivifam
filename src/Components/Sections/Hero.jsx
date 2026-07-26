@@ -19,7 +19,7 @@ const HERO_CONTENT = [
     description:
       "If your ultimate business goal is to generate numerous leads quickly, you've come to the right place. As its name illuminates, Digital Marketing King is a leading & the Best Digital Marketing Agency In India rendering success-proven business solutions worldwide.",
     buttonText: "Learn More",
-    image: "/Images/Img_1.png",
+    image: "/Images/immmg.png",
   },
   {
     title1: "Rank Your Website",
@@ -28,7 +28,7 @@ const HERO_CONTENT = [
     description:
       "If your ultimate business goal is to generate numerous leads quickly, you've come to the right place. As its name illuminates, Digital Marketing King is a leading & the Best Digital Marketing Agency In India rendering success-proven business solutions worldwide.",
     buttonText: "Learn More",
-    image: "/Images/Img_1.png",
+    image: "/Images/immmg.png",
   },
   {
     title1: "Rank Your Website",
@@ -37,7 +37,7 @@ const HERO_CONTENT = [
     description:
       "If your ultimate business goal is to generate numerous leads quickly, you've come to the right place. As its name illuminates, Digital Marketing King is a leading & the Best Digital Marketing Agency In India rendering success-proven business solutions worldwide.",
     buttonText: "Learn More",
-    image: "/Images/Img_1.png",
+    image: "/Images/immmg.png",
   },
 ];
 
@@ -84,93 +84,93 @@ export default function Hero() {
       duration: 1,
       ease: "power3.inOut",
       onComplete: () => {
-        setIsAnimationSlider(false);
-        if (!intervalRef.current) startAutoSlide();
+        // setIsAnimationSlider(false);
+        // if (!intervalRef.current) startAutoSlide();
       },
     });
   }, [current]);
 
   // Animates Slides Elements
-  useGSAP(() => {
-    if (!trackRef.current) return;
+  // useGSAP(() => {
+  //   if (!trackRef.current) return;
 
-    const activeSlide = trackRef.current.querySelector(
-      '.hero-slide[data-active="true"]',
-    );
+  //   const activeSlide = trackRef.current.querySelector(
+  //     '.hero-slide[data-active="true"]',
+  //   );
 
-    if (!activeSlide) return;
+  //   if (!activeSlide) return;
 
-    const tl = gsap.timeline();
+  //   const tl = gsap.timeline();
 
-    tl.from(activeSlide.querySelector(".hero-title1"), {
-      y: 50,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.out",
-    })
-      .from(
-        activeSlide.querySelector(".hero-title2"),
-        {
-          y: 50,
-          opacity: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        "-=0.35",
-      )
-      .from(
-        activeSlide.querySelector(".hero-title3"),
-        {
-          y: 50,
-          opacity: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        "-=0.35",
-      )
-      .from(
-        activeSlide.querySelector(".hero-description"),
-        {
-          y: 30,
-          opacity: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        },
-        "-=0.3",
-      )
-      .from(
-        activeSlide.querySelector(".hero-button"),
-        {
-          y: 20,
-          opacity: 0,
-          scale: 0.9,
-          duration: 0.4,
-          ease: "back.out(1.7)",
-        },
-        "-=0.25",
-      )
-      .from(
-        activeSlide.querySelector(".hero-image"),
-        {
-          x: 80,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        },
-        "-=0.6",
-      );
-  }, [current]);
+  //   tl.from(activeSlide.querySelector(".hero-title1"), {
+  //     y: 50,
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     ease: "power3.out",
+  //   })
+  //     .from(
+  //       activeSlide.querySelector(".hero-title2"),
+  //       {
+  //         y: 50,
+  //         opacity: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       },
+  //       "-=0.35",
+  //     )
+  //     .from(
+  //       activeSlide.querySelector(".hero-title3"),
+  //       {
+  //         y: 50,
+  //         opacity: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       },
+  //       "-=0.35",
+  //     )
+  //     .from(
+  //       activeSlide.querySelector(".hero-description"),
+  //       {
+  //         y: 30,
+  //         opacity: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       },
+  //       "-=0.3",
+  //     )
+  //     .from(
+  //       activeSlide.querySelector(".hero-button"),
+  //       {
+  //         y: 20,
+  //         opacity: 0,
+  //         scale: 0.9,
+  //         duration: 0.4,
+  //         ease: "back.out(1.7)",
+  //       },
+  //       "-=0.25",
+  //     )
+  //     .from(
+  //       activeSlide.querySelector(".hero-image"),
+  //       {
+  //         x: 80,
+  //         opacity: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       },
+  //       "-=0.6",
+  //     );
+  // }, [current]);
 
-  useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, []);
+  // useEffect(() => {
+  //   startAutoSlide();
+  //   return () => stopAutoSlide();
+  // }, []);
 
   return (
     <div className="w-full h-fit min-h-screen flex flex-col relative overflow-hidden">
       {/* Background Glow */}
-      <div className="hidden lg:block absolute -top-[200px] left-1/2 -translate-x-1/2 w-[800px] aspect-square rounded-full blur-[100px] bg-gradient-to-b from-[#5B6DFF] to-[#3C4BBFB2]" />
-      <div className="hidden lg:block absolute -top-[1200px] left-1/2 -translate-x-1/2 w-[1800px] aspect-square rounded-full bg-black" />
+      {/* <div className="hidden lg:block absolute -top-[200px] left-1/2 -translate-x-1/2 w-[800px] aspect-square rounded-full blur-[100px] bg-gradient-to-b from-[#5B6DFF] to-[#3C4BBFB2]" />
+      <div className="hidden lg:block absolute -top-[1200px] left-1/2 -translate-x-1/2 w-[1800px] aspect-square rounded-full bg-black" /> */}
 
       {/* NAVBAR */}
       <NavBar />
@@ -201,7 +201,7 @@ export default function Hero() {
               "
             >
               {/* LEFT CONTENT */}
-              <div className="w-full max-w-xl">
+              <div className="w-full max-w-xl mr-auto">
                 <h1 className="hero-title1 text-4xl sm:text-5xl lg:text-[64px] font-[Poppins] font-bold leading-none -mb-4 text-white">
                   {hero.title1}
                 </h1>
@@ -267,7 +267,7 @@ export default function Hero() {
                   blur-[100px] "
                 />
 
-                <img
+                {/* <img
                   src={hero.image}
                   alt={hero.title1}
                   className="relative
@@ -276,27 +276,53 @@ export default function Hero() {
                   sm:w-[400px]
                   md:w-[500px]
                   lg:w-[560px]
-                  object-contain"
-                />
+                  object-contain
+                  rounded-3xl"
+                /> */}
+
+                {/* <video
+                  muted
+                  autoPlay
+                  loop
+                  src={"/Vid.mp4"}
+                  className="relative
+                  z-10
+                  -mt-10
+                  w-[280px]
+                  sm:w-[400px]
+                  md:w-[500px]
+                  lg:w-[560px]
+                  object-contain
+                  rounded-3xl"
+                ></video> */}
               </div>
             </div>
           ))}
         </div>
         {/* Left Arrow */}
-        <button
+        {/* <button
           onClick={() => changeSlide("prev")}
           className="p-1 lg:p-2 absolute left-4 lg:left-16 top-1/2 -translate-y-1/2 text-5xl text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-x-1 hover:text-gray-300 active:scale-95 border border-white rounded-full"
         >
           <ChevronLeft />
-        </button>
+        </button> */}
         {/* Right Arrow */}
-        <button
+        {/* <button
           onClick={() => changeSlide("next")}
           className="p-1 lg:p-2 absolute right-4 lg:right-16 top-1/2 -translate-y-1/2 text-5xl text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-x-1 hover:text-gray-300 active:scale-95 border border-white rounded-full"
         >
           <ChevronRight />
-        </button>
+        </button> */}
       </section>
+
+      <video
+        autoPlay
+        muted
+        loop
+        className="w-screen h-screen absolute top-1/2 left-1/2 -translate-x-1/2
+       -translate-y-1/2 object-cover"
+        src="/Images/vid.mp4"
+      ></video>
     </div>
   );
 }

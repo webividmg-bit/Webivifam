@@ -55,6 +55,7 @@ const Button = forwardRef(
       uppercase = true,
       leftIcon,
       rightIcon,
+      onClick,
       className,
       disabled = false,
       ...props
@@ -68,6 +69,7 @@ const Button = forwardRef(
       <button
         ref={ref}
         disabled={disabled}
+        onClick={onClick}
         className={clsx(
           "group relative inline-flex overflow-hidden rounded-full transition-all duration-300 hover:-translate-y-[2px] disabled:pointer-events-none disabled:opacity-50 active:scale-[0.9]",
           currentSize.wrapper,

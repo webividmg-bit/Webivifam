@@ -12,6 +12,10 @@ import Blogs from "./Pages/Blogs";
 import About from "./Pages/About";
 import Landing from "./Pages/Landing";
 import Contact from "./Pages/Contact";
+import Services from "./Pages/Services";
+import BlogReader from "./Pages/BlogReader";
+
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   // const lenis = new Lenis({
@@ -32,11 +36,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route index element={<Landing />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about_us" element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact_us" element={<Contact />} />
+        <Route path="/blogs/read_blog/:index" element={<BlogReader />} />
       </Routes>
     </BrowserRouter>
   );

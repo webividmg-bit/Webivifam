@@ -145,12 +145,11 @@ function SeoPartner() {
               lg:text-[48px]
             "
           >
-            Choose Your{" "}
-            <span className="bg-gradient-to-b from-white via-[#D8D8D8] to-[#4D4D4D] bg-clip-text text-transparent">
-              SEO Partner
-            </span>
+            Choose Your
             <br />
-            Wisely!
+            <span className="bg-gradient-to-b from-white via-[#D8D8D8] to-[#4D4D4D] bg-clip-text text-transparent">
+              SEO Partner Wisely!
+            </span>
           </h2>
 
           <Line className="seo-line mx-auto mb-10 lg:mx-0 lg:mb-16" />

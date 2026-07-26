@@ -20,9 +20,12 @@ import {
 } from "lucide-react";
 
 // Components
-import Line from "../Common/Line";
-import SmServiceCard from "../Common/Cards/SmServiceCard";
-import ServicePopUp from "../PopUps/ServicePopUp";
+import Line from "../Components/Common/Line";
+import Footer from "../Components/Sections/Common/Footer";
+import NavBar from "../Components/Sections/Common/NavBar";
+import PageHeading from "../Components/Common/PageHeading";
+import SmServiceCard from "../Components/Common/Cards/SmServiceCard";
+import ServicePopUp from "../Components/PopUps/ServicePopUp";
 
 const services = [
   {
@@ -130,9 +133,8 @@ const services = [
   },
 ];
 
-function TopServices() {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef(null);
+function Services() {
+  const pageRef = useRef();
 
   const [openPopUp, setOpenPopUp] = useState(false);
   const [serviceTitle, setServiceTitle] = useState("");
@@ -145,121 +147,114 @@ function TopServices() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          // markers: true,
-        },
-      });
-
-      tl.from(".services-heading span", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "power3.out",
-      })
+      // ===========================
+      // Heading Animation
+      // ===========================
+      gsap
+        .timeline()
+        .from(".services-title", {
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          delay: 0.2,
+          ease: "power3.out",
+        })
         .from(
           ".services-line",
           {
             scaleX: 0,
             transformOrigin: "center",
-            duration: 0.6,
+            duration: 0.5,
             ease: "power3.out",
           },
-          "-=0.4",
-        )
-        .from(
-          cardsRef.current.querySelectorAll(".service-card"),
-          {
-            y: 80,
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-          },
-          "-=0.2",
+          "-=0.35",
         );
+
+      // ===========================
+      // Cards Animation
+      // ===========================
+      gsap.utils.toArray(".service-card").forEach((card, index) => {
+        gsap.from(card, {
+          y: 70,
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.8,
+          delay: index * 0.12, // each card starts 0.12s after the previous
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            once: true,
+          },
+        });
+      });
     },
-    { scope: sectionRef },
+    { scope: pageRef },
   );
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24">
+    <div ref={pageRef} className="w-full relative overflow-hidden bg-black">
+      <div className="w-full min-h-fit relative overflow-hidden">
+        <NavBar />
+        <PageHeading className="relative z-10" title={"SERVICES"} />
 
-      {/* Heading */}
-      <div className="services-heading relative z-10 mb-5 flex flex-col items-center leading-none text-center">
-        <span
-          className="
-          font-[Poppins]
-          font-bold
-          text-white
-          text-4xl
-          sm:text-5xl
-          lg:text-[64px]
-        "
-        >
-          OUR
-        </span>
+        {/* HERO  */}
+        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+          {/* Background */}
+          <img
+            src="/Images/Bg_1.png"
+            alt="Background"
+            className="hero-bg absolute inset-0 h-full w-full object-cover opacity-10"
+          />
 
-        <span
-          className="
-          bg-gradient-to-b
-          from-white
-          to-[#4D4D4D]
-          bg-clip-text
-          text-transparent
-          font-[Poppins]
-          font-bold
-          text-4xl
-          sm:text-5xl
-          lg:text-[64px]
-        "
-        >
-          TOP SERVICES
-        </span>
-      </div>
+          {/* Heading */}
+          <h2
+            className="
+            services-title
+            mb-5
+            w-fit
+            mx-auto
+            bg-gradient-to-b
+            from-white
+            via-[#D8D8D8]
+            to-[#4D4D4D]
+            bg-clip-text
+            text-transparent
+            font-bold
+            text-center
+            text-4xl
+            sm:text-5xl
+            lg:text-[48px]
+           "
+          >
+            OUR SERVICES
+          </h2>
 
-      {/* Accent Line */}
-      <Line className="services-line relative z-10 mx-auto mb-12 lg:mb-20" />
-
-      {/* Cards */}
-      <div
-        ref={cardsRef}
-        className="
-        relative
-        z-10
-        mx-auto
-        grid
-        max-w-[1450px]
-        grid-cols-1
-        md:grid-cols-2
-        xl:grid-cols-3
-        gap-8
-        lg:gap-10
-        px-6
-        sm:px-10
-        lg:px-20
-      "
-      >
-        {services.map((service, index) => (
-          <div key={index} className="service-card">
-            <SmServiceCard
-              className="h-full"
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              onMoreInfo={() => {
-                setOpenPopUp(true);
-                setServiceTitle(service.title);
-                setSubServices(service.subServices);
-              }}
-            />
+          {/* Accent Line */}
+          <div className="services-line w-fit mx-auto mb-12 lg:mb-20">
+            <Line />
           </div>
-        ))}
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {services.map((service, index) => (
+              <div key={index} className="service-card">
+                <SmServiceCard
+                  className="h-full"
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  onMoreInfo={() => {
+                    setOpenPopUp(true);
+                    setServiceTitle(service.title);
+                    setSubServices(service.subServices);
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
+      <Footer />
 
       <ServicePopUp
         open={openPopUp}
@@ -267,8 +262,8 @@ function TopServices() {
         subServices={subServices}
         onClose={handleOnPopUpClosed}
       />
-    </section>
+    </div>
   );
 }
 
-export default TopServices;
+export default Services;
