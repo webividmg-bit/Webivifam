@@ -9,7 +9,6 @@ import Line from "../Components/Common/Line";
 import NavBar from "../Components/Sections/Common/NavBar";
 import PageHeading from "../Components/Common/PageHeading";
 import Footer from "../Components/Sections/Common/Footer";
-import Button from "../Components/Common/Buttons/Button";
 import BlogCard from "../Components/Common/Cards/BlogCard";
 
 // Data

@@ -1,37 +1,31 @@
 import React from "react";
-
-// Comonent Sections
-import Hero from "../Components/Sections/Hero";
-import Boost from "../Components/Sections/Boost";
-import Stats from "../Components/Sections/Stats";
-import Blogs from "../Components/Sections/Blogs";
+import HeroSection from "../Components/Landing/HeroSection";
+import TransformationSection from "../Components/Landing/TransformationSection";
+import GrowthRoadmapSection from "../Components/Landing/GrowthRoadmapSection";
+import IndustriesSection from "../Components/Landing/IndustriesSection";
+import EcosystemSection from "../Components/Landing/EcosystemSection";
+import SEOSection from "../Components/Landing/SEOSection";
+import ServicesSection from "../Components/Landing/ServicesSection";
+import WhyWebivifamSection from "../Components/Landing/WhyWebivifamSection";
+import GrowingHaryanaSection from "../Components/Landing/GrowingHaryanaSection";
 import Footer from "../Components/Sections/Common/Footer";
-import Welcome from "../Components/Sections/Welcome";
-import Mission from "../Components/Sections/Mission";
-import Reviews from "../Components/Sections/Reviews";
-import SeoPartner from "../Components/Sections/SeoPartner";
-import Speciality from "../Components/Sections/Speciality";
-import TopServices from "../Components/Sections/TopServices";
-import WorkingProcess from "../Components/Sections/WorkingProcess";
-import TablesOfContent from "../Components/Sections/TablesOfContent";
 
 function Landing() {
   return (
     <div className="w-full relative overflow-hidden bg-black">
-      <Hero />
-      <Boost />
-      <Welcome />
-      <Stats />
-      <TopServices />
-      <Speciality />
-      <WorkingProcess />
-      <Mission />
-      <SeoPartner />
-      <Blogs />
-      <Reviews />
+      <HeroSection />
+      <TransformationSection />
+      <GrowthRoadmapSection />
+      <IndustriesSection />
+      <EcosystemSection />
+      <SEOSection />
+      <ServicesSection />
+      <WhyWebivifamSection />
+      <GrowingHaryanaSection />
       <Footer />
     </div>
   );
 }
 
 export default Landing;
+

@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 
 // Icons
 import {
-  Phone,
   Mail,
   MapPin,
   Users,
@@ -16,7 +15,6 @@ import {
 
 // Components
 import Line from "../Components/Common/Line";
-import Button from "../Components/Common/Buttons/Button";
 import NavBar from "../Components/Sections/Common/NavBar";
 import Footer from "../Components/Sections/Common/Footer";
 import PageHeading from "../Components/Common/PageHeading";

@@ -11,12 +11,6 @@ import {
   PenTool,
   Megaphone,
   Search,
-  Globe,
-  Link2,
-  MapPin,
-  ShoppingCart,
-  Building2,
-  FileText,
 } from "lucide-react";
 
 // Components
