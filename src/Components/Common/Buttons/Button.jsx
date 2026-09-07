@@ -71,7 +71,7 @@ const Button = forwardRef(
         disabled={disabled}
         onClick={onClick}
         className={clsx(
-          "group relative inline-flex overflow-hidden rounded-full transition-all duration-300 hover:-translate-y-[2px] disabled:pointer-events-none disabled:opacity-50 active:scale-[0.9]",
+          "group relative inline-flex overflow-hidden rounded-full transition-all duration-300 hover:-translate-y-[2px] disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2BB3FF] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
           currentSize.wrapper,
           currentVariant.wrapper,
           className,

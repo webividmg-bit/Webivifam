@@ -3,8 +3,9 @@ import React from "react";
 export default function TreeRootsGraphic() {
   return (
     <svg
-      className="absolute inset-0 w-full h-[500px] pointer-events-none overflow-visible z-0"
+      className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-0"
       viewBox="0 0 900 500"
+      preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>

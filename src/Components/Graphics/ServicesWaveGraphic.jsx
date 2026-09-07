@@ -2,42 +2,42 @@ import React from "react";
 
 export default function ServicesWaveGraphic() {
   return (
-    <div className="relative w-full overflow-hidden flex items-center justify-center py-8">
+    <div className="relative w-full overflow-hidden flex items-center justify-center py-6 sm:py-8">
       {/* Background Soft Blue Ambient Haze */}
-      <div className="absolute inset-0 m-auto w-[800px] h-[200px] rounded-full bg-[#182860]/20 blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 m-auto w-full max-w-[850px] h-[220px] rounded-full bg-[#1A2D75]/25 blur-[100px] pointer-events-none" />
 
       <div className="w-full overflow-x-auto lg:overflow-visible no-scrollbar">
         <svg
           viewBox="0 0 1920 360"
-          className="w-[1440px] xl:w-full min-w-[1280px] h-auto overflow-visible mx-auto"
+          className="w-full min-w-[700px] sm:min-w-[1000px] lg:min-w-[1280px] xl:w-full h-auto overflow-visible mx-auto"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient id="waveLineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1E327A" stopOpacity="0.1" />
-              <stop offset="20%" stopColor="#2B46A8" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#3DB9FF" stopOpacity="0.9" />
-              <stop offset="80%" stopColor="#2B46A8" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#1E327A" stopOpacity="0.1" />
+              <stop offset="0%" stopColor="#2542B0" stopOpacity="0.35" />
+              <stop offset="25%" stopColor="#2E52D6" stopOpacity="0.85" />
+              <stop offset="50%" stopColor="#45C4FF" stopOpacity="1" />
+              <stop offset="75%" stopColor="#2E52D6" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#2542B0" stopOpacity="0.35" />
             </linearGradient>
 
             <linearGradient id="waveLineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#122055" stopOpacity="0.05" />
-              <stop offset="25%" stopColor="#1F368E" stopOpacity="0.7" />
-              <stop offset="50%" stopColor="#2A45B0" stopOpacity="0.8" />
-              <stop offset="75%" stopColor="#1F368E" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#122055" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#182A70" stopOpacity="0.25" />
+              <stop offset="25%" stopColor="#233FA8" stopOpacity="0.75" />
+              <stop offset="50%" stopColor="#3058D6" stopOpacity="0.85" />
+              <stop offset="75%" stopColor="#233FA8" stopOpacity="0.75" />
+              <stop offset="100%" stopColor="#182A70" stopOpacity="0.25" />
             </linearGradient>
 
             <linearGradient id="waveLineGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0B1336" stopOpacity="0.05" />
-              <stop offset="30%" stopColor="#1C2E75" stopOpacity="0.5" />
-              <stop offset="70%" stopColor="#1C2E75" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#0B1336" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#101D50" stopOpacity="0.2" />
+              <stop offset="30%" stopColor="#1E3485" stopOpacity="0.6" />
+              <stop offset="70%" stopColor="#1E3485" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#101D50" stopOpacity="0.2" />
             </linearGradient>
 
             <filter id="serviceNodeGlow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
@@ -51,7 +51,7 @@ export default function ServicesWaveGraphic() {
             d="M -100 180 C 150 110 400 250 650 180 C 900 110 1150 250 1400 180 C 1650 110 1900 250 2050 180"
             fill="none"
             stroke="url(#waveLineGrad1)"
-            strokeWidth="1.6"
+            strokeWidth="2"
             className="wave-flow-1 pointer-events-none"
           />
 
@@ -60,7 +60,7 @@ export default function ServicesWaveGraphic() {
             d="M -100 200 C 180 270 420 130 680 200 C 940 270 1180 130 1440 200 C 1700 270 1940 130 2050 200"
             fill="none"
             stroke="url(#waveLineGrad2)"
-            strokeWidth="1.3"
+            strokeWidth="1.6"
             className="wave-flow-2 pointer-events-none"
           />
 
@@ -69,7 +69,7 @@ export default function ServicesWaveGraphic() {
             d="M -100 160 C 250 90 550 270 850 160 C 1150 70 1450 270 1750 160 C 1900 110 2000 210 2050 160"
             fill="none"
             stroke="url(#waveLineGrad3)"
-            strokeWidth="1.1"
+            strokeWidth="1.3"
             className="wave-flow-3 pointer-events-none"
           />
 

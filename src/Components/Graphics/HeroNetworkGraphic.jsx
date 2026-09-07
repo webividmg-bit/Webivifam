@@ -46,27 +46,36 @@ const HERO_SERVICES = [
   },
 ];
 
-export default function HeroNetworkGraphic() {
+export default function HeroNetworkGraphic({ className = "" }) {
   return (
-    <div className="absolute right-[-15%] sm:right-[-10%] lg:right-[-5%] xl:right-[-2%] top-[-15%] sm:top-[-10%] lg:top-[-5%] bottom-[-5%] w-[720px] sm:w-[920px] lg:w-[1150px] xl:w-[1250px] pointer-events-none z-10 flex items-center justify-center">
+    <div
+      className={`absolute right-[-70%] sm:right-[-30%] lg:right-[-14%] xl:right-[-8%] top-[34%] sm:top-[10%] lg:top-[-16%] xl:top-[-12%] bottom-[-5%] w-[680px] sm:w-[900px] lg:w-[1250px] xl:w-[1380px] pointer-events-none z-10 flex items-center justify-center ${className}`}
+    >
       <svg
         viewBox="0 0 1200 950"
         className="w-full h-full overflow-visible"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
+          {/* Outermost Band: Fades completely into the black background without hard stroke */}
           <radialGradient id="bandGrad1" cx="57%" cy="42%" r="50%">
-            <stop offset="0%" stopColor="#040714" />
-            <stop offset="100%" stopColor="#000000" />
+            <stop offset="0%" stopColor="#050A1A" stopOpacity="0.8" />
+            <stop offset="60%" stopColor="#020510" stopOpacity="0.35" />
+            <stop offset="90%" stopColor="#000000" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#000000" stopOpacity="0" />
           </radialGradient>
+
           <radialGradient id="bandGrad2" cx="57%" cy="42%" r="50%">
-            <stop offset="0%" stopColor="#080E24" />
-            <stop offset="100%" stopColor="#040714" />
+            <stop offset="0%" stopColor="#080E24" stopOpacity="0.9" />
+            <stop offset="85%" stopColor="#040714" stopOpacity="0.75" />
+            <stop offset="100%" stopColor="#02040D" stopOpacity="0.4" />
           </radialGradient>
+
           <radialGradient id="bandGrad3" cx="57%" cy="42%" r="50%">
             <stop offset="0%" stopColor="#0E1738" />
             <stop offset="100%" stopColor="#080E24" />
           </radialGradient>
+
           <radialGradient id="bandGrad4" cx="57%" cy="42%" r="50%">
             <stop offset="0%" stopColor="#14214E" />
             <stop offset="100%" stopColor="#0E1738" />
@@ -90,21 +99,22 @@ export default function HeroNetworkGraphic() {
         </defs>
 
         {/* Concentric Circle Bands centered at (680, 400) */}
-        <circle cx="680" cy="400" r="470" fill="url(#bandGrad1)" stroke="#1C2D63" strokeWidth="0.8" strokeOpacity="0.25" />
-        <circle cx="680" cy="400" r="375" fill="url(#bandGrad2)" stroke="#23387A" strokeWidth="0.8" strokeOpacity="0.3" />
-        <circle cx="680" cy="400" r="275" fill="url(#bandGrad3)" stroke="#2B4494" strokeWidth="0.8" strokeOpacity="0.35" />
+        {/* Outermost circle with seamless zero-boundary soft fade */}
+        <circle cx="680" cy="400" r="490" fill="url(#bandGrad1)" />
+        <circle cx="680" cy="400" r="375" fill="url(#bandGrad2)" stroke="#23387A" strokeWidth="0.7" strokeOpacity="0.25" />
+        <circle cx="680" cy="400" r="275" fill="url(#bandGrad3)" stroke="#2B4494" strokeWidth="0.8" strokeOpacity="0.32" />
         <circle cx="680" cy="400" r="170" fill="url(#bandGrad4)" stroke="#3555B8" strokeWidth="0.8" strokeOpacity="0.4" />
 
         {/* Concentric Orbit Guidelines */}
-        <circle cx="680" cy="400" r="470" fill="none" stroke="#2BB3FF" strokeWidth="0.5" strokeOpacity="0.1" />
-        <circle cx="680" cy="400" r="375" fill="none" stroke="#2BB3FF" strokeWidth="0.5" strokeOpacity="0.12" />
+        <circle cx="680" cy="400" r="470" fill="none" stroke="#2BB3FF" strokeWidth="0.4" strokeOpacity="0.06" />
+        <circle cx="680" cy="400" r="375" fill="none" stroke="#2BB3FF" strokeWidth="0.5" strokeOpacity="0.1" />
         <circle cx="680" cy="400" r="275" fill="none" stroke="#2BB3FF" strokeWidth="0.5" strokeOpacity="0.15" />
         <circle cx="680" cy="400" r="170" fill="none" stroke="#2BB3FF" strokeWidth="0.5" strokeOpacity="0.2" />
 
-        {/* Radiating Water-Drop / Energy Ripple Shockwaves */}
-        <circle cx="680" cy="400" r="170" fill="none" stroke="#2BB3FF" className="hero-ripple-1 pointer-events-none" />
-        <circle cx="680" cy="400" r="170" fill="none" stroke="#2BB3FF" className="hero-ripple-2 pointer-events-none" />
-        <circle cx="680" cy="400" r="170" fill="none" stroke="#2BB3FF" className="hero-ripple-3 pointer-events-none" />
+        {/* Radiating Water-Drop / Energy Ripple Shockwaves with Smooth Fadeout */}
+        <circle cx="680" cy="400" r="150" fill="none" stroke="#2BB3FF" className="hero-ripple-1 pointer-events-none" />
+        <circle cx="680" cy="400" r="150" fill="none" stroke="#2BB3FF" className="hero-ripple-2 pointer-events-none" />
+        <circle cx="680" cy="400" r="150" fill="none" stroke="#2BB3FF" className="hero-ripple-3 pointer-events-none" />
 
         {/* 7 3D Spheres with Clean Typography Labels */}
         {HERO_SERVICES.map((item, idx) => (

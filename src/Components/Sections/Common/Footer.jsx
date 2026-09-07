@@ -5,16 +5,13 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 // Icons
-// Icons
 import {
   FaFacebookF,
   FaThreads,
-  FaYoutube,
   FaInstagram,
   FaLinkedinIn,
-  FaXTwitter,
 } from "react-icons/fa6";
-import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 // Component
 import Line from "../../Common/Line";
@@ -170,8 +167,10 @@ function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="border-t border-[#3C4BBF30] bg-[#090B15] pt-16 lg:pt-20 pb-10 lg:pb-12"
+      className="relative bg-[#090B15] pt-16 lg:pt-20 pb-10 lg:pb-12 overflow-hidden"
     >
+      {/* Seamless Energy Connector Line from Section 9 */}
+      <div className="absolute top-0 inset-x-0 h-[1.5px] footer-top-energy-line" />
       <div className="mx-auto max-w-[1450px] px-6 sm:px-10 lg:px-20">
         {/* TOP */}
         <div

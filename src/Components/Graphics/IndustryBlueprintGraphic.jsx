@@ -2,10 +2,10 @@ import React from "react";
 
 export default function IndustryBlueprintGraphic() {
   return (
-    <div className="relative w-full max-w-[960px] mx-auto min-h-[600px] flex items-center justify-center">
+    <div className="relative w-full max-w-[960px] mx-auto flex items-center justify-center">
       <svg
         viewBox="0 0 950 680"
-        className="w-full h-full overflow-visible"
+        className="w-full h-auto overflow-visible"
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* ======================================================== */}

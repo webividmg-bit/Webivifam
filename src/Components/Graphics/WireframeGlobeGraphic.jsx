@@ -13,9 +13,9 @@ export default function WireframeGlobeGraphic() {
   const [hoveredHub, setHoveredHub] = useState(null);
 
   return (
-    <div className="relative w-[420px] h-[420px] sm:w-[540px] sm:h-[540px] lg:w-[640px] lg:h-[640px] flex items-center justify-center">
+    <div className="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[640px] lg:h-[640px] max-w-full flex items-center justify-center">
       {/* Subtle Atmospheric Ambient Glow */}
-      <div className="absolute inset-0 m-auto w-[420px] h-[420px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#3C4BBF]/15 blur-[110px] pointer-events-none" />
+      <div className="absolute inset-0 m-auto w-[280px] h-[280px] sm:w-[460px] sm:h-[460px] lg:w-[520px] lg:h-[520px] rounded-full bg-[#3C4BBF]/15 blur-[110px] pointer-events-none" />
 
       <svg
         viewBox="0 0 600 600"

@@ -8,11 +8,13 @@ import SEOSection from "../Components/Landing/SEOSection";
 import ServicesSection from "../Components/Landing/ServicesSection";
 import WhyWebivifamSection from "../Components/Landing/WhyWebivifamSection";
 import GrowingHaryanaSection from "../Components/Landing/GrowingHaryanaSection";
+import ScrollJourneyIndicator from "../Components/Landing/ScrollJourneyIndicator";
 import Footer from "../Components/Sections/Common/Footer";
 
 function Landing() {
   return (
     <div className="w-full relative overflow-hidden bg-black">
+      <ScrollJourneyIndicator />
       <HeroSection />
       <TransformationSection />
       <GrowthRoadmapSection />

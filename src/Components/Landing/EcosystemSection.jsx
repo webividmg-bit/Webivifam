@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router";
 
 export default function EcosystemSection() {
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    containerRef.current.style.setProperty("--mouse-x", `${x}px`);
+    containerRef.current.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   const boxBaseClass =
     "w-full sm:w-1/3 py-3.5 px-6 bg-black border border-[#2B3E94]/60 text-white font-[Poppins] text-[17px] sm:text-[18px] font-normal cursor-default transition-all duration-300 ease-out hover:border-[#2BB3FF] hover:shadow-[0_0_28px_rgba(43,179,255,0.35)] hover:-translate-y-0.5";
 
   return (
-    <section className="relative w-full overflow-hidden py-20 lg:py-28 bg-black">
-      
+    <section
+      id="ecosystem"
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="blueprint-spotlight-zone relative w-full overflow-hidden py-20 lg:py-28 bg-black"
+    >
       {/* Background Soft Blue Ambient Glow */}
-      <div className="absolute inset-0 m-auto w-[540px] h-[340px] rounded-full bg-[#182860]/20 blur-[130px] pointer-events-none" />
+      <div className="absolute inset-0 m-auto w-[600px] h-[380px] rounded-full bg-[#182860]/20 blur-[140px] pointer-events-none -z-0" />
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 text-center flex flex-col items-center">
         
@@ -20,8 +35,8 @@ export default function EcosystemSection() {
             Strategy
           </div>
 
-          {/* Technology (Elevated) */}
-          <div className={`${boxBaseClass} -translate-y-3 hover:-translate-y-3.5`}>
+          {/* Technology (Elevated on desktop/tablet) */}
+          <div className={`${boxBaseClass} sm:-translate-y-3 hover:sm:-translate-y-3.5`}>
             Technology
           </div>
 
@@ -31,7 +46,7 @@ export default function EcosystemSection() {
           </div>
         </div>
 
-        {/* Central Headline */}
+        {/* Central Headline (Static) */}
         <h2 className="font-[Poppins] font-bold text-4xl sm:text-5xl lg:text-[60px] text-white leading-tight tracking-tight mb-5 bg-gradient-to-b from-white via-[#E0E0E0] to-[#707070] bg-clip-text text-transparent">
           One Business. One Ecosystem
         </h2>

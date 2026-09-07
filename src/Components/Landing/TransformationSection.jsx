@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import InfinityGraphic from "../Graphics/InfinityGraphic";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function TransformationSection() {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".infinity-graphic-parallax",
+        { y: 10 },
+        {
+          y: -10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.5,
+          },
+        }
+      );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="relative w-full overflow-hidden py-20 lg:py-28 bg-black">
+    <section id="transformation" ref={containerRef} className="relative w-full overflow-hidden py-20 lg:py-28 bg-black">
+      {/* Subtle Atmospheric Cosmic Glow */}
+      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-[520px] h-[340px] rounded-full bg-[#1A2560]/14 blur-[140px] pointer-events-none -z-0" />
+
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
@@ -23,8 +53,10 @@ export default function TransformationSection() {
               </div>
             </div>
 
-            {/* Infinity Figure-8 Vector Curve Graphic */}
-            <InfinityGraphic />
+            {/* Infinity Figure-8 Vector Curve Graphic with Subtle Scroll Response */}
+            <div className="infinity-graphic-parallax w-full">
+              <InfinityGraphic />
+            </div>
           </div>
 
           {/* Right Column: Body Paragraph + Link */}
@@ -38,11 +70,14 @@ export default function TransformationSection() {
             <div>
               <Link
                 to="/contact_us"
-                className="inline-flex items-center gap-1.5 font-[Poppins] text-[17px] sm:text-[18px] font-normal transition-colors duration-200 group"
+                className="inline-flex items-center gap-2 font-[Poppins] text-[17px] sm:text-[18px] font-normal transition-all duration-300 group hover:translate-x-1 focus-visible:ring-2 focus-visible:ring-[#2BB3FF] rounded"
               >
                 <span className="text-white">Build My</span>
-                <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] transition-colors duration-200 ml-1">
+                <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] group-hover:drop-shadow-[0_0_8px_rgba(43,179,255,0.6)] transition-all duration-300">
                   Growth Roadmap
+                </span>
+                <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] transition-transform duration-300 group-hover:translate-x-1.5 text-lg">
+                  →
                 </span>
               </Link>
             </div>
