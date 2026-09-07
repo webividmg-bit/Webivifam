@@ -22,13 +22,6 @@ const TEAM_MEMBERS = [
     description:
       "The Co-Founder oversees strategic planning, client success, and operations, ensuring seamless collaboration between clients and internal teams. They drive projects from concept to execution while maintaining efficiency, quality, and strong client relationships.",
   },
-  {
-    name: "Pushkardeep",
-    role: "Lead & Full Stack Developer",
-    image: "/Images/Team/Pushkardeep.jpeg",
-    description:
-      "Our Full Stack Development team builds high-performance websites, web applications, e-commerce platforms, and scalable digital solutions. From intuitive front-end experiences to robust back-end systems, we create technology that drives business growth and delivers exceptional user experiences.",
-  },
 ];
 
 function Team() {
@@ -123,9 +116,9 @@ function Team() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto justify-center">
           {TEAM_MEMBERS.map((member, index) => (
-            <div key={index} className="team-card">
+            <div key={index} className="team-card h-full">
               <TeamCard
                 image={member.image}
                 name={member.name}
