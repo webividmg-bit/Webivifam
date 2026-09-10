@@ -34,17 +34,15 @@ export default function GrowingHaryanaSection() {
             </p>
           </div>
 
-          {/* CTA Link */}
+          {/* CTA Button styled with the exact same blue color (#2c378a) as the Roadmap steps */}
           <div className="relative z-10 pb-8 sm:pb-14">
             <Link
               to="/contact_us"
-              className="inline-flex items-center gap-2 font-[Poppins] text-[17px] sm:text-[18px] font-normal transition-all duration-300 group hover:translate-x-1 focus-visible:ring-2 focus-visible:ring-[#2BB3FF] rounded"
+              style={{ backgroundColor: "#2c378a" }}
+              className="group inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 font-[Poppins] font-medium text-[16px] sm:text-[17px] text-white bg-[#2c378a] border border-transparent hover:border-[#2BB3FF] transition-all duration-300 ease-out hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(44,55,138,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2BB3FF]"
             >
-              <span className="text-white">Start Your</span>
-              <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] group-hover:drop-shadow-[0_0_8px_rgba(43,179,255,0.6)] transition-all duration-300">
-                Project
-              </span>
-              <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] transition-transform duration-300 group-hover:translate-x-1.5 text-lg">
+              <span>Start Your Project</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-lg">
                 →
               </span>
             </Link>

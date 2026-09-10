@@ -36,7 +36,7 @@ export default function HeroSection() {
       className="hero-section-root w-full min-h-[720px] lg:min-h-screen flex flex-col bg-black relative overflow-hidden"
     >
       {/* Background Soft Atmospheric Indigo Depth */}
-      <div className="absolute right-[5%] top-[10%] w-[650px] h-[550px] rounded-full bg-[#142258]/18 blur-[160px] pointer-events-none -z-0" />
+      <div className="absolute right-[0%] xl:right-[-4%] top-[10%] w-[650px] h-[550px] rounded-full bg-[#142258]/18 blur-[160px] pointer-events-none -z-0" />
 
       {/* Top Navigation */}
       <NavBar />

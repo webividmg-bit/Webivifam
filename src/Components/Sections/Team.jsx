@@ -16,7 +16,7 @@ const TEAM_MEMBERS = [
       "Sanjana is the Founder of WEBIVIFAM and a Digital Growth Strategist dedicated to helping businesses grow through innovation, marketing, and technology. She leads the agency's vision, client partnerships, and growth strategies, with a focus on building sustainable brands that create lasting impact.",
   },
   {
-    name: "Megha",
+    name: "Megha Sharma",
     role: "Co-Founder & Operations Lead",
     image: "/Images/Team/Megha.jpeg",
     description:

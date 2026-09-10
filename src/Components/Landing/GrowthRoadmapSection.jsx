@@ -46,7 +46,7 @@ export default function GrowthRoadmapSection() {
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
-          
+
           {/* Background Blueprint Rectangles with subtle parallax */}
           <svg
             className="roadmap-bg-rects absolute inset-0 w-full h-full pointer-events-none overflow-visible z-0"
@@ -98,10 +98,10 @@ export default function GrowthRoadmapSection() {
                 className="inline-flex items-center gap-2 font-[Poppins] text-[17px] sm:text-[18px] font-normal transition-all duration-300 group hover:translate-x-1 focus-visible:ring-2 focus-visible:ring-[#2BB3FF] rounded"
               >
                 <span className="text-white">Build My</span>
-                <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] group-hover:drop-shadow-[0_0_8px_rgba(43,179,255,0.6)] transition-all duration-300">
+                <span className="text-[#2c378a] group-hover:text-[#2BB3FF] group-hover:drop-shadow-[0_0_8px_rgba(43,179,255,0.6)] transition-all duration-300">
                   Growth Roadmap
                 </span>
-                <span className="text-[#3C4BBF] group-hover:text-[#2BB3FF] transition-transform duration-300 group-hover:translate-x-1.5 text-lg">
+                <span className="text-[#2c378a] group-hover:text-[#2BB3FF] transition-transform duration-300 group-hover:translate-x-1.5 text-lg">
                   →
                 </span>
               </Link>
@@ -111,7 +111,7 @@ export default function GrowthRoadmapSection() {
           {/* Right Column: Step Ladder with Vertical Rails & Subtle Depth Hover */}
           <div className="w-full lg:w-[48%] z-10 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[420px] flex flex-col items-center py-2">
-              
+
               {/* Vertical Blueprint Connector Rails */}
               <div className="absolute top-2 bottom-2 left-[32%] w-[1.2px] bg-[#2B3E94] pointer-events-none opacity-80" />
               <div className="absolute top-2 bottom-2 right-[32%] w-[1.2px] bg-[#2B3E94] pointer-events-none opacity-80" />
@@ -132,7 +132,7 @@ export default function GrowthRoadmapSection() {
                       className={`
                         w-[78%] py-3.5 px-6 text-center font-[Poppins] font-medium text-[16px] cursor-default
                         transition-all duration-300 ease-out
-                        ${step.variant === "solid" ? "bg-[#3C4BBF] text-white" : "bg-black border border-[#2B3E94] text-white"}
+                        ${step.variant === "solid" ? "bg-[#2c378a] text-white" : "bg-black border border-[#2B3E94] text-white"}
                         ${isHovered ? "scale-[1.03] -translate-y-0.5 shadow-[0_0_24px_rgba(60,75,191,0.55)] border-[#2BB3FF] z-20" : ""}
                         ${isDimmed ? "opacity-75 scale-[0.985] z-10" : "opacity-100 z-10"}
                       `}

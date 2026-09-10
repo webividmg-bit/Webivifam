@@ -49,7 +49,7 @@ const HERO_SERVICES = [
 export default function HeroNetworkGraphic({ className = "" }) {
   return (
     <div
-      className={`absolute right-[-70%] sm:right-[-30%] lg:right-[-14%] xl:right-[-8%] top-[34%] sm:top-[10%] lg:top-[-16%] xl:top-[-12%] bottom-[-5%] w-[680px] sm:w-[900px] lg:w-[1250px] xl:w-[1380px] pointer-events-none z-10 flex items-center justify-center ${className}`}
+      className={`absolute right-[-70%] sm:right-[-30%] lg:right-[-24%] xl:right-[-20%] 2xl:right-[-24%] top-[34%] sm:top-[10%] lg:top-[-16%] xl:top-[-12%] bottom-[-5%] w-[680px] sm:w-[900px] lg:w-[1250px] xl:w-[1380px] pointer-events-none z-10 flex items-center justify-center ${className}`}
     >
       <svg
         viewBox="0 0 1200 950"
