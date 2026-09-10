@@ -14,6 +14,10 @@ export default defineConfig({
     alias: {
       "@/components/ui/globe": path.resolve(__dirname, "./src/Components/ui/globe.jsx"),
       "@/Components/ui/globe": path.resolve(__dirname, "./src/Components/ui/globe.jsx"),
+      "@/components/ui/carousel": path.resolve(__dirname, "./src/Components/ui/carousel.jsx"),
+      "@/Components/ui/carousel": path.resolve(__dirname, "./src/Components/ui/carousel.jsx"),
+      "@/components": path.resolve(__dirname, "./src/Components"),
+      "@/Components": path.resolve(__dirname, "./src/Components"),
       "@": path.resolve(__dirname, "./src"),
     },
   },

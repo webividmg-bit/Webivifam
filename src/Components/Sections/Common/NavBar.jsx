@@ -20,12 +20,12 @@ const NavBar = forwardRef(({ className, ...props }, ref) => {
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-8 sm:px-12 lg:px-16 py-7">
           
-          {/* Cyan/Blue Logo matching Image 1 */}
-          <Link to="/" className="flex items-center">
+          {/* Cyan/Blue Logo with Spring Pop & Glowing Aura on Hover */}
+          <Link to="/" className="flex items-center group">
             <img
               src="/Images/Logo.png"
               alt="WEBIVIFAM Logo"
-              className="w-10 sm:w-12 object-contain"
+              className="w-10 sm:w-12 object-contain transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-125 group-hover:drop-shadow-[0_0_22px_rgba(43,179,255,0.95)] active:scale-95 cursor-pointer select-none"
             />
           </Link>
 

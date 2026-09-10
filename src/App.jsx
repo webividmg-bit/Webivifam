@@ -16,6 +16,7 @@ import Services from "./Pages/Services";
 import BlogReader from "./Pages/BlogReader";
 
 import ScrollToTop from "./Components/ScrollToTop";
+import Preloader from "./Components/Common/Preloader";
 
 function App() {
   // const lenis = new Lenis({
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Preloader />
       <ScrollToTop />
       <Routes>
         <Route index element={<Landing />} />

@@ -9,6 +9,7 @@ const SECTIONS = [
   { id: "seo", label: "Search & SEO" },
   { id: "services", label: "Services" },
   { id: "why-us", label: "Global Reach" },
+  { id: "reviews", label: "Testimonials" },
   { id: "growing-haryana", label: "Growth" },
 ];
 
@@ -18,7 +19,7 @@ export default function ScrollJourneyIndicator() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-      
+
       SECTIONS.forEach((section, index) => {
         const el = document.getElementById(section.id);
         if (el) {
@@ -78,10 +79,9 @@ export default function ScrollJourneyIndicator() {
                 <div
                   className={`
                     rounded-full transition-all duration-300 ease-out
-                    ${
-                      isActive
-                        ? "w-2.5 h-2.5 bg-[#2BB3FF] shadow-[0_0_12px_#2BB3FF] scale-125"
-                        : isPassed
+                    ${isActive
+                      ? "w-2.5 h-2.5 bg-[#2BB3FF] shadow-[0_0_12px_#2BB3FF] scale-125"
+                      : isPassed
                         ? "w-1.5 h-1.5 bg-[#3C4BBF]/90"
                         : "w-1.5 h-1.5 bg-[#1E2952] group-hover:bg-[#3C4BBF] group-hover:scale-110"
                     }

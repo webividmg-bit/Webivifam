@@ -53,6 +53,16 @@ export const DEFAULT_HUBS = [
     color: [0.35, 0.75, 1.0],
     subtitle: "Asia-Pacific Hub",
   },
+  {
+    id: "new-zealand",
+    name: "New Zealand",
+    shortName: "New Zealand",
+    location: [-40.9006, 174.886],
+    isHQ: false,
+    size: 0.07,
+    color: [0.35, 0.75, 1.0],
+    subtitle: "Oceania Hub",
+  },
 ];
 
 // Glowing 3D Arcs connecting India HQ to all key international regions
@@ -61,6 +71,7 @@ export const DEFAULT_ARCS = [
   { from: [20.5937, 78.9629], to: [37.0902, -95.7129], color: [0.3, 0.8, 1.0] }, // India -> USA
   { from: [20.5937, 78.9629], to: [56.1304, -106.3468], color: [0.3, 0.8, 1.0] }, // India -> Canada
   { from: [20.5937, 78.9629], to: [-25.2744, 133.7751], color: [0.3, 0.8, 1.0] }, // India -> Australia
+  { from: [20.5937, 78.9629], to: [-40.9006, 174.886], color: [0.3, 0.8, 1.0] }, // India -> New Zealand
 ];
 
 // Spherical to 2D screen projection matching Cobe's internal camera math

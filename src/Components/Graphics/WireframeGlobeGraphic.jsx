@@ -46,16 +46,14 @@ export default function WireframeGlobeGraphic() {
             <button
               key={hub.id}
               onClick={() => setSelectedHub(isSelected ? null : hub.id)}
-              className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 backdrop-blur-md cursor-pointer ${
-                hub.isHQ
-                  ? "bg-cyan-950/70 border border-cyan-400/60 text-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.25)] hover:border-cyan-300 hover:scale-105"
-                  : "bg-[#0b1329]/75 border border-blue-500/30 text-slate-300 hover:border-blue-400 hover:text-white hover:scale-105"
-              } ${isSelected ? "ring-2 ring-cyan-400 border-transparent shadow-[0_0_20px_rgba(34,211,238,0.5)]" : ""}`}
+              className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 backdrop-blur-md cursor-pointer ${hub.isHQ
+                ? "bg-cyan-950/70 border border-cyan-400/60 text-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.25)] hover:border-cyan-300 hover:scale-105"
+                : "bg-[#0b1329]/75 border border-blue-500/30 text-slate-300 hover:border-blue-400 hover:text-white hover:scale-105"
+                } ${isSelected ? "ring-2 ring-cyan-400 border-transparent shadow-[0_0_20px_rgba(34,211,238,0.5)]" : ""}`}
             >
               <span
-                className={`w-2 h-2 rounded-full ${
-                  hub.isHQ ? "bg-cyan-400 animate-pulse" : "bg-blue-400"
-                }`}
+                className={`w-2 h-2 rounded-full ${hub.isHQ ? "bg-cyan-400 animate-pulse" : "bg-blue-400"
+                  }`}
               />
               <span>{hub.name}</span>
               {hub.isHQ && (
@@ -66,14 +64,6 @@ export default function WireframeGlobeGraphic() {
             </button>
           );
         })}
-      </div>
-
-      {/* Helpful drag prompt hint */}
-      <div className="mt-3 text-center">
-        <p className="text-[11px] text-slate-400/80 font-mono tracking-wider flex items-center justify-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400/60 animate-ping" />
-          <span>Interactive 3D Earth • Drag horizontally to rotate freely</span>
-        </p>
       </div>
     </div>
   );

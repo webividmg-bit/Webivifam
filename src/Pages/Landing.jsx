@@ -7,6 +7,7 @@ import EcosystemSection from "../Components/Landing/EcosystemSection";
 import SEOSection from "../Components/Landing/SEOSection";
 import ServicesSection from "../Components/Landing/ServicesSection";
 import WhyWebivifamSection from "../Components/Landing/WhyWebivifamSection";
+import ClientReviewsSection from "../Components/Landing/ClientReviewsSection";
 import GrowingHaryanaSection from "../Components/Landing/GrowingHaryanaSection";
 import ScrollJourneyIndicator from "../Components/Landing/ScrollJourneyIndicator";
 import Footer from "../Components/Sections/Common/Footer";
@@ -23,6 +24,7 @@ function Landing() {
       <SEOSection />
       <ServicesSection />
       <WhyWebivifamSection />
+      <ClientReviewsSection />
       <GrowingHaryanaSection />
       <Footer />
     </div>
