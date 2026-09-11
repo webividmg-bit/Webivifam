@@ -3,6 +3,7 @@ import HeroSection from "../Components/Landing/HeroSection";
 import TransformationSection from "../Components/Landing/TransformationSection";
 import GrowthRoadmapSection from "../Components/Landing/GrowthRoadmapSection";
 import IndustriesSection from "../Components/Landing/IndustriesSection";
+import LogoStorySection from "../Components/Landing/LogoStorySection";
 import EcosystemSection from "../Components/Landing/EcosystemSection";
 import SEOSection from "../Components/Landing/SEOSection";
 import ServicesSection from "../Components/Landing/ServicesSection";
@@ -20,6 +21,7 @@ function Landing() {
       <TransformationSection />
       <GrowthRoadmapSection />
       <IndustriesSection />
+      <LogoStorySection />
       <EcosystemSection />
       <SEOSection />
       <ServicesSection />

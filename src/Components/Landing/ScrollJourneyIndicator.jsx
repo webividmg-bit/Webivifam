@@ -5,6 +5,7 @@ const SECTIONS = [
   { id: "transformation", label: "Transformation" },
   { id: "roadmap", label: "Growth Roadmap" },
   { id: "industries", label: "Industries" },
+  { id: "growth-story", label: "Growth Stories" },
   { id: "ecosystem", label: "Ecosystem" },
   { id: "seo", label: "Search & SEO" },
   { id: "services", label: "Services" },
