@@ -5,8 +5,22 @@ import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 // Client Logos in public/logos with Company Names & Per-Logo Visual Optimizations
 const LOGOS = [
-  { id: 1, name: "AAforce Demolition", src: "/logos/1.png", alt: "AAforce Demolition" },
-  { id: 2, name: "Spreevo", src: "/logos/2.png", alt: "Spreevo" },
+  {
+    id: 1,
+    name: "AAforce Demolition",
+    src: "/logos/1.png",
+    alt: "AAforce Demolition",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-[#EAB308]",
+  },
+  {
+    id: 2,
+    name: "Spreevo",
+    src: "/logos/2.png",
+    alt: "Spreevo",
+    imgClass: "scale-[1.7] object-cover group-hover:scale-[1.8]",
+    bgClass: "bg-white",
+  },
   {
     id: 3,
     name: "Brokyfy",
@@ -15,12 +29,47 @@ const LOGOS = [
     imgClass: "scale-[1.8] object-cover group-hover:scale-[1.9]",
     bgClass: "bg-[#4138C2]",
   },
-  { id: 4, name: "Devyuga", src: "/logos/4.png", alt: "Devyuga" },
-  { id: 5, name: "Arbomeric", src: "/logos/5.png", alt: "Arbomeric" },
-  { id: 6, name: "Hirely", src: "/logos/6.png", alt: "Hirely" },
+  {
+    id: 4,
+    name: "Devyuga",
+    src: "/logos/4.png",
+    alt: "Devyuga",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-[#c4ccd6]",
+  },
+  {
+    id: 5,
+    name: "Arbomeric",
+    src: "/logos/5.png",
+    alt: "Arbomeric",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-white",
+  },
+  {
+    id: 6,
+    name: "Hirely",
+    src: "/logos/6.png",
+    alt: "Hirely",
+    imgClass: "scale-[1.85] object-contain group-hover:scale-[1.95]",
+    bgClass: "bg-white",
+  },
   // Duplicate set to guarantee seamless infinite loop & 3D panoramic depth
-  { id: 7, name: "AAforce Demolition", src: "/logos/1.png", alt: "AAforce Demolition" },
-  { id: 8, name: "Spreevo", src: "/logos/2.png", alt: "Spreevo" },
+  {
+    id: 7,
+    name: "AAforce Demolition",
+    src: "/logos/1.png",
+    alt: "AAforce Demolition",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-[#EAB308]",
+  },
+  {
+    id: 8,
+    name: "Spreevo",
+    src: "/logos/2.png",
+    alt: "Spreevo",
+    imgClass: "scale-[1.7] object-cover group-hover:scale-[1.8]",
+    bgClass: "bg-white",
+  },
   {
     id: 9,
     name: "Brokyfy",
@@ -29,9 +78,30 @@ const LOGOS = [
     imgClass: "scale-[1.8] object-cover group-hover:scale-[1.9]",
     bgClass: "bg-[#4138C2]",
   },
-  { id: 10, name: "Devyuga", src: "/logos/4.png", alt: "Devyuga" },
-  { id: 11, name: "Arbomeric", src: "/logos/5.png", alt: "Arbomeric" },
-  { id: 12, name: "Hirely", src: "/logos/6.png", alt: "Hirely" },
+  {
+    id: 10,
+    name: "Devyuga",
+    src: "/logos/4.png",
+    alt: "Devyuga",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-[#c4ccd6]",
+  },
+  {
+    id: 11,
+    name: "Arbomeric",
+    src: "/logos/5.png",
+    alt: "Arbomeric",
+    imgClass: "scale-[1.65] object-cover group-hover:scale-[1.75]",
+    bgClass: "bg-white",
+  },
+  {
+    id: 12,
+    name: "Hirely",
+    src: "/logos/6.png",
+    alt: "Hirely",
+    imgClass: "scale-[1.85] object-contain group-hover:scale-[1.95]",
+    bgClass: "bg-white",
+  },
 ];
 
 export default function LogoStorySection() {
