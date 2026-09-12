@@ -3,18 +3,32 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
-// Client Logos in public/logos with Company Names
+// Client Logos in public/logos with Company Names & Per-Logo Visual Optimizations
 const LOGOS = [
   { id: 1, name: "AAforce Demolition", src: "/logos/1.png", alt: "AAforce Demolition" },
   { id: 2, name: "Spreevo", src: "/logos/2.png", alt: "Spreevo" },
-  { id: 3, name: "Brokyfy", src: "/logos/3.png", alt: "Brokyfy" },
+  {
+    id: 3,
+    name: "Brokyfy",
+    src: "/logos/3.png",
+    alt: "Brokyfy",
+    imgClass: "scale-[1.8] object-cover group-hover:scale-[1.9]",
+    bgClass: "bg-[#4138C2]",
+  },
   { id: 4, name: "Devyuga", src: "/logos/4.png", alt: "Devyuga" },
   { id: 5, name: "Arbomeric", src: "/logos/5.png", alt: "Arbomeric" },
   { id: 6, name: "Hirely", src: "/logos/6.png", alt: "Hirely" },
   // Duplicate set to guarantee seamless infinite loop & 3D panoramic depth
   { id: 7, name: "AAforce Demolition", src: "/logos/1.png", alt: "AAforce Demolition" },
   { id: 8, name: "Spreevo", src: "/logos/2.png", alt: "Spreevo" },
-  { id: 9, name: "Brokyfy", src: "/logos/3.png", alt: "Brokyfy" },
+  {
+    id: 9,
+    name: "Brokyfy",
+    src: "/logos/3.png",
+    alt: "Brokyfy",
+    imgClass: "scale-[1.8] object-cover group-hover:scale-[1.9]",
+    bgClass: "bg-[#4138C2]",
+  },
   { id: 10, name: "Devyuga", src: "/logos/4.png", alt: "Devyuga" },
   { id: 11, name: "Arbomeric", src: "/logos/5.png", alt: "Arbomeric" },
   { id: 12, name: "Hirely", src: "/logos/6.png", alt: "Hirely" },
@@ -206,11 +220,13 @@ export default function LogoStorySection() {
                       <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-radial from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                       {/* Scaled Circular Logo Emblem Badge */}
-                      <div className="relative z-10 w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center p-1 sm:p-1.5 shadow-[0_0_18px_rgba(43,179,255,0.22)] border-2 border-cyan-400/40 group-hover:border-cyan-300 group-hover:shadow-[0_0_24px_rgba(43,179,255,0.45)] group-hover:scale-105 transition-all duration-300 overflow-hidden shrink-0">
+                      <div
+                        className={`relative z-10 w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full ${logo.bgClass || "bg-white"} flex items-center justify-center p-1 sm:p-1.5 shadow-[0_0_18px_rgba(43,179,255,0.22)] border-2 border-cyan-400/40 group-hover:border-cyan-300 group-hover:shadow-[0_0_24px_rgba(43,179,255,0.45)] group-hover:scale-105 transition-all duration-300 overflow-hidden shrink-0`}
+                      >
                         <img
                           src={logo.src}
                           alt={logo.alt}
-                          className="w-full h-full object-contain scale-110 sm:scale-115 group-hover:scale-120 filter drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)] transition-transform duration-300"
+                          className={`w-full h-full ${logo.imgClass || "object-contain scale-110 sm:scale-115 group-hover:scale-120"} filter drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)] transition-transform duration-300`}
                         />
                       </div>
 
