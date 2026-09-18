@@ -323,7 +323,7 @@ function Footer() {
           ref={copyrightRef}
           className="mt-16 lg:mt-20 border-t border-[#3C4BBF30] pt-6 lg:pt-8 text-center text-sm sm:text-base text-gray-500"
         >
-          © 2026 WEBEIVI Agency. All Rights Reserved.
+          © 2026 WEBIVIFAM Agency. All Rights Reserved.
         </div>
       </div>
     </footer>

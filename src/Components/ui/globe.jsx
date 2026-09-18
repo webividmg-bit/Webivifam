@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import createGlobe from "cobe";
 import { cn } from "@/lib/utils";
 
@@ -69,8 +75,16 @@ export const DEFAULT_HUBS = [
 export const DEFAULT_ARCS = [
   { from: [20.5937, 78.9629], to: [55.3781, -3.436], color: [0.3, 0.8, 1.0] }, // India -> UK
   { from: [20.5937, 78.9629], to: [37.0902, -95.7129], color: [0.3, 0.8, 1.0] }, // India -> USA
-  { from: [20.5937, 78.9629], to: [56.1304, -106.3468], color: [0.3, 0.8, 1.0] }, // India -> Canada
-  { from: [20.5937, 78.9629], to: [-25.2744, 133.7751], color: [0.3, 0.8, 1.0] }, // India -> Australia
+  {
+    from: [20.5937, 78.9629],
+    to: [56.1304, -106.3468],
+    color: [0.3, 0.8, 1.0],
+  }, // India -> Canada
+  {
+    from: [20.5937, 78.9629],
+    to: [-25.2744, 133.7751],
+    color: [0.3, 0.8, 1.0],
+  }, // India -> Australia
   { from: [20.5937, 78.9629], to: [-40.9006, 174.886], color: [0.3, 0.8, 1.0] }, // India -> New Zealand
 ];
 
@@ -93,11 +107,13 @@ function projectPoint(latLon, phi, theta, scale = 1, markerElevation = 0.05) {
   const sinPhi = Math.sin(phi);
 
   const c = cosPhi * p[0] + sinPhi * p[2];
-  const s = sinPhi * sinTheta * p[0] + cosTheta * p[1] - cosPhi * sinTheta * p[2];
+  const s =
+    sinPhi * sinTheta * p[0] + cosTheta * p[1] - cosPhi * sinTheta * p[2];
 
   const x = (c * scale + 1) / 2;
   const y = (-s * scale + 1) / 2;
-  const z = -sinPhi * cosTheta * p[0] + sinTheta * p[1] + cosPhi * cosTheta * p[2];
+  const z =
+    -sinPhi * cosTheta * p[0] + sinTheta * p[1] + cosPhi * cosTheta * p[2];
 
   // Point is visible when facing the camera (z > 0.05)
   const isVisible = z > 0.05;
@@ -169,7 +185,7 @@ export default function Earth({
         color: hub.color || (hub.isHQ ? [0.2, 0.95, 1.0] : [0.35, 0.75, 1.0]),
         id: hub.id,
       })),
-    [hubs]
+    [hubs],
   );
 
   // Handle pointer down (drag start) with pointer capture for robust interaction
@@ -186,7 +202,7 @@ export default function Earth({
         canvasRef.current.style.cursor = "grabbing";
       }
     },
-    [interactive]
+    [interactive],
   );
 
   // Handle pointer move
@@ -271,7 +287,7 @@ export default function Earth({
               hub.location,
               phiRef.current,
               thetaRef.current,
-              scale
+              scale,
             );
 
             el.style.left = `${(x * 100).toFixed(2)}%`;
@@ -329,7 +345,7 @@ export default function Earth({
       onPointerMove={handlePointerMove}
       className={cn(
         "relative flex items-center justify-center z-10 w-full max-w-[380px] sm:max-w-[480px] lg:max-w-[560px] mx-auto select-none touch-none",
-        className
+        className,
       )}
     >
       {/* High-Tech Glowing Atmospheric Backdrop Layer */}
@@ -365,7 +381,7 @@ export default function Earth({
                 }}
                 className={cn(
                   "absolute transition-opacity duration-200 cursor-pointer group pointer-events-auto",
-                  "will-change-transform"
+                  "will-change-transform",
                 )}
                 style={{
                   left: "50%",
@@ -383,7 +399,7 @@ export default function Earth({
                       isHQ
                         ? "bg-[#06182c]/90 border-cyan-400/80 shadow-[0_0_15px_rgba(6,182,212,0.45)] hover:border-cyan-300 hover:scale-105"
                         : "bg-[#080f1e]/85 border-blue-500/40 shadow-[0_0_12px_rgba(59,130,246,0.3)] hover:border-blue-400 hover:scale-105",
-                      isSelected && "ring-2 ring-cyan-400 scale-105"
+                      isSelected && "ring-2 ring-cyan-400 scale-105",
                     )}
                   >
                     {/* Pulsing Beacon Dot */}
@@ -405,7 +421,7 @@ export default function Earth({
                     <span
                       className={cn(
                         "text-[11px] font-semibold tracking-wide whitespace-nowrap",
-                        isHQ ? "text-cyan-200 font-bold" : "text-slate-200"
+                        isHQ ? "text-cyan-200 font-bold" : "text-slate-200",
                       )}
                     >
                       {hub.name}
@@ -423,13 +439,17 @@ export default function Earth({
                   <div
                     className={cn(
                       "w-[1.5px] h-2.5 mt-0.5 transition-colors",
-                      isHQ ? "bg-cyan-400/80 shadow-[0_0_6px_#22d3ee]" : "bg-blue-400/60"
+                      isHQ
+                        ? "bg-cyan-400/80 shadow-[0_0_6px_#22d3ee]"
+                        : "bg-blue-400/60",
                     )}
                   />
                   <div
                     className={cn(
                       "w-1.5 h-1.5 rounded-full -mt-0.5",
-                      isHQ ? "bg-cyan-300 shadow-[0_0_8px_#67e8f9]" : "bg-blue-300"
+                      isHQ
+                        ? "bg-cyan-300 shadow-[0_0_8px_#67e8f9]"
+                        : "bg-blue-300",
                     )}
                   />
                 </div>
