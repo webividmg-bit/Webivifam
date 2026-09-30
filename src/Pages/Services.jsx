@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,6 +13,9 @@ import {
   PenTool,
   Megaphone,
   Search,
+  Video,
+  BriefcaseBusiness,
+  Target,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
@@ -34,313 +38,74 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: Palette,
-    title: "Creative Graphic Design",
+    icon: Search,
+    title: "SEO",
+    path: "/services/seo",
     description:
-      "Build a memorable visual identity with creative designs that make your brand look professional, consistent, and unique.",
-
-    subServices: [
-      {
-        title: "Logo Design",
-        description:
-          "Create distinctive and memorable logos that represent your brand and establish a strong visual identity.",
-      },
-      {
-        title: "Brand Identity",
-        description:
-          "Develop a consistent visual language for your business across colors, typography, graphics, and other brand elements.",
-      },
-      {
-        title: "Business Cards",
-        description:
-          "Professional business card designs that create a strong first impression and keep your brand memorable.",
-      },
-      {
-        title: "Brochures",
-        description:
-          "Informative and visually engaging brochures designed to communicate your products, services, and brand effectively.",
-      },
-      {
-        title: "Social Media Creatives",
-        description:
-          "Eye-catching social media graphics designed to improve engagement and maintain a consistent brand presence.",
-      },
-      {
-        title: "Packaging Design",
-        description:
-          "Creative packaging designs that make your products visually appealing while maintaining your brand identity.",
-      },
-      {
-        title: "Banners & Posters",
-        description:
-          "Attention-grabbing banners and posters designed for promotions, campaigns, events, and business communication.",
-      },
-      {
-        title: "Presentation Design",
-        description:
-          "Professional presentations that organize information clearly and communicate your ideas with strong visual impact.",
-      },
-    ],
+      "Improve your search visibility, attract qualified visitors, and turn organic traffic into consistent leads and business growth.",
   },
-
   {
-    icon: Code2,
-    title: "Web Development",
+    icon: Megaphone,
+    title: "SMM",
+    path: "/services/smm",
     description:
-      "Fast, responsive, and scalable websites built to deliver smooth user experiences and help your business grow online.",
-
-    subServices: [
-      {
-        title: "Business Websites",
-        description:
-          "Professional websites designed to establish your online presence, showcase your services, and generate business enquiries.",
-      },
-      {
-        title: "Landing Pages",
-        description:
-          "Focused landing pages designed around a specific goal such as lead generation, product promotion, or conversions.",
-      },
-      {
-        title: "Portfolio Websites",
-        description:
-          "Modern portfolio websites that present your work, skills, projects, and achievements in a professional way.",
-      },
-      {
-        title: "E-Commerce Development",
-        description:
-          "Scalable online stores with product management, shopping experiences, payments, and essential e-commerce functionality.",
-      },
-      {
-        title: "Custom Web Applications",
-        description:
-          "Custom-built web applications designed around your unique business workflows, features, and requirements.",
-      },
-      {
-        title: "CMS Development",
-        description:
-          "Flexible content management systems that make it easier to create, update, and manage website content.",
-      },
-      {
-        title: "Website Maintenance",
-        description:
-          "Ongoing website updates, improvements, bug fixes, security checks, and technical maintenance.",
-      },
-      {
-        title: "Performance Optimization",
-        description:
-          "Improve loading speed, responsiveness, and overall website performance for a smoother user experience.",
-      },
-    ],
+      "Build your social presence through strategic content, audience engagement, and consistent brand communication.",
   },
-
+  {
+    icon: PenTool,
+    title: "Logo Design",
+    path: "/services/logo_design",
+    description:
+      "Create distinctive and memorable logos that represent your brand and establish a strong visual identity.",
+  },
+  {
+    icon: Palette,
+    title: "Brand Identity",
+    path: "/services/brand_identity",
+    description:
+      "Build a distinctive and consistent brand identity through strategic visual direction, messaging, typography, and design.",
+  },
   {
     icon: Smartphone,
     title: "App Development",
+    path: "/services/app_developkment",
     description:
       "Turn your ideas into powerful Android and iOS applications designed for performance, usability, and long-term scalability.",
-
-    subServices: [
-      {
-        title: "Android Apps",
-        description:
-          "Build reliable Android applications focused on performance, usability, and a smooth experience across devices.",
-      },
-      {
-        title: "iOS Apps",
-        description:
-          "Develop polished iOS applications with intuitive interfaces and functionality tailored to Apple devices.",
-      },
-      {
-        title: "Cross-Platform Apps",
-        description:
-          "Build applications that work across multiple platforms while reducing development time and maintenance complexity.",
-      },
-      {
-        title: "Flutter Development",
-        description:
-          "Create modern cross-platform applications using Flutter with a shared codebase and consistent user experience.",
-      },
-      {
-        title: "React Native Development",
-        description:
-          "Develop mobile applications using React Native while leveraging reusable components and modern development practices.",
-      },
-      {
-        title: "App UI/UX Design",
-        description:
-          "Design intuitive mobile interfaces and user experiences that make applications easy and enjoyable to use.",
-      },
-      {
-        title: "API Integration",
-        description:
-          "Connect applications with APIs and external services to provide dynamic data and advanced functionality.",
-      },
-      {
-        title: "App Maintenance",
-        description:
-          "Keep applications updated, secure, compatible, and optimized through ongoing improvements and maintenance.",
-      },
-    ],
   },
-
   {
-    icon: Search,
-    title: "SEO Optimization",
+    icon: Palette,
+    title: "Graphic Design & UI/UX",
+    path: "/services/graphics_designing",
     description:
-      "Improve your search visibility, attract qualified visitors, and turn organic traffic into consistent leads and business growth.",
-
-    subServices: [
-      {
-        title: "Technical SEO",
-        description:
-          "Improve crawling, indexing, site structure, Core Web Vitals, and technical performance so search engines can better understand your website.",
-      },
-      {
-        title: "On-Page SEO",
-        description:
-          "Optimize website content, headings, metadata, internal links, and keyword targeting to better match search intent.",
-      },
-      {
-        title: "Off-Page SEO",
-        description:
-          "Improve website authority through ethical white-hat SEO strategies, relevant backlinks, and external optimization efforts.",
-      },
-      {
-        title: "Local SEO",
-        description:
-          "Improve visibility in local searches and Google Maps through local keywords, business profile optimization, citations, and location-based content.",
-      },
-      {
-        title: "E-Commerce SEO",
-        description:
-          "Optimize product and category pages to increase organic visibility and attract customers with high purchase intent.",
-      },
-      {
-        title: "Enterprise SEO",
-        description:
-          "Scalable SEO strategies for large websites with complex structures and thousands of pages.",
-      },
-      {
-        title: "SEO Content Marketing",
-        description:
-          "Create useful, search-optimized content that satisfies search intent, attracts qualified visitors, and builds long-term authority.",
-      },
-      {
-        title: "SEO Audits",
-        description:
-          "Identify technical, content, performance, indexing, and optimization issues that may be limiting your organic growth.",
-      },
-      {
-        title: "Keyword Research",
-        description:
-          "Discover relevant and high-intent search terms based on your audience, competition, and business goals.",
-      },
-      {
-        title: "Link Building",
-        description:
-          "Build relevant, high-quality backlinks that strengthen website authority and improve its overall search presence.",
-      },
-    ],
+      "Create visually engaging designs and intuitive digital experiences that communicate clearly and keep users engaged.",
   },
-
   {
-    icon: PenTool,
-    title: "UI / UX Design",
+    icon: Code2,
+    title: "Website Development",
+    path: "/services/web_development",
     description:
-      "Create intuitive and engaging digital experiences that are visually appealing, easy to use, and focused on your customers.",
-
-    subServices: [
-      {
-        title: "Wireframing",
-        description:
-          "Create clear structural layouts that define the content, functionality, and flow of a digital product before visual design.",
-      },
-      {
-        title: "User Research",
-        description:
-          "Understand your users, their needs, behaviors, and problems to create experiences that solve real-world requirements.",
-      },
-      {
-        title: "User Journey Mapping",
-        description:
-          "Visualize the steps users take while interacting with your product and identify opportunities to improve their experience.",
-      },
-      {
-        title: "Prototype Design",
-        description:
-          "Create interactive prototypes that allow ideas and user flows to be tested before development begins.",
-      },
-      {
-        title: "Website UI Design",
-        description:
-          "Design modern and visually engaging website interfaces that balance aesthetics, usability, and business goals.",
-      },
-      {
-        title: "Mobile App UI",
-        description:
-          "Create intuitive mobile interfaces designed specifically for touch interactions, smaller screens, and mobile users.",
-      },
-      {
-        title: "Dashboard Design",
-        description:
-          "Design clear and functional dashboards that make complex information easier to understand and interact with.",
-      },
-      {
-        title: "Design Systems",
-        description:
-          "Build reusable design components and guidelines that maintain consistency across digital products.",
-      },
-    ],
+      "Build modern, responsive, high-performance websites designed around your brand, customers, and business goals.",
   },
-
   {
     icon: Megaphone,
-    title: "Digital Marketing",
+    title: "AI Video Creations",
+    path: "/services/ai_video_creation",
     description:
-      "Reach the right audience with data-driven marketing campaigns designed to increase awareness, generate leads, and drive conversions.",
-
-    subServices: [
-      {
-        title: "Social Media Marketing",
-        description:
-          "Build your social presence through strategic content, audience engagement, and consistent brand communication.",
-      },
-      {
-        title: "Google Ads",
-        description:
-          "Create targeted paid search campaigns designed to reach people actively searching for relevant products and services.",
-      },
-      {
-        title: "Facebook & Instagram Ads",
-        description:
-          "Run targeted social advertising campaigns to increase awareness, generate leads, and reach relevant audiences.",
-      },
-      {
-        title: "Content Marketing",
-        description:
-          "Create useful and engaging content that attracts your target audience and supports long-term brand growth.",
-      },
-      {
-        title: "Email Marketing",
-        description:
-          "Use targeted email campaigns to communicate with customers, nurture leads, and maintain long-term relationships.",
-      },
-      {
-        title: "Lead Generation",
-        description:
-          "Attract potential customers through targeted campaigns and conversion-focused strategies designed around qualified leads.",
-      },
-      {
-        title: "Brand Strategy",
-        description:
-          "Develop a clear brand direction that defines your positioning, messaging, audience, and overall market presence.",
-      },
-      {
-        title: "Marketing Analytics",
-        description:
-          "Track campaign performance and customer behavior to understand what is working and make data-driven improvements.",
-      },
-    ],
+      "Turn ideas, products, campaigns, and brand stories into compelling AI-assisted video content for modern digital platforms.",
+  },
+  {
+    icon: Search,
+    title: "Business Consultation",
+    path: "/services/business_consultation",
+    description:
+      "Get practical strategic guidance to identify the right digital opportunities, prioritize investments, and create a clear roadmap for growth.",
+  },
+  {
+    icon: Megaphone,
+    title: "Custom Digital Marketing",
+    path: "/services/custom_digital_marketing",
+    description:
+      "Build a customized marketing strategy combining the right channels, campaigns, and optimization methods around your specific business goals.",
   },
 ];
 
@@ -366,6 +131,7 @@ const whyChooseUs = [
 */
 
 function Services() {
+  const navigate = useNavigate();
   const pageRef = useRef(null);
 
   const [openPopUp, setOpenPopUp] = useState(false);
@@ -394,6 +160,10 @@ function Services() {
     setOpenPopUp(false);
     setServiceTitle("");
     setSubServices([]);
+  };
+
+  const handleReadMore = (service) => {
+    navigate(service.path);
   };
 
   /*
@@ -510,10 +280,7 @@ function Services() {
       <div className="relative w-full overflow-hidden">
         <NavBar />
 
-        <PageHeading
-          className="relative z-10"
-          title="SERVICES"
-        />
+        <PageHeading className="relative z-10" title="SERVICES" />
 
         <img
           src="/Images/Bg_1.png"
@@ -595,9 +362,9 @@ function Services() {
                 sm:text-lg
               "
             >
-              From powerful websites and applications to creative branding,
-              SEO, and digital marketing, we build digital solutions that
-              help businesses stand out, reach their audience, and grow.
+              From powerful websites and applications to creative branding, SEO,
+              and digital marketing, we build digital solutions that help
+              businesses stand out, reach their audience, and grow.
             </p>
 
             <div className="services-line mx-auto mt-10 w-fit">
@@ -673,16 +440,13 @@ function Services() {
             "
           >
             {services.map((service, i) => (
-              <div
-                key={i}
-                className="service-card"
-              >
+              <div key={i} className="service-card">
                 <SmServiceCard
                   className="h-full"
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  onMoreInfo={() => handleOpenPopUp(service)}
+                  onReadMore={() => handleReadMore(service)}
                 />
               </div>
             ))}
@@ -761,13 +525,8 @@ function Services() {
               >
                 WE DON'T JUST
                 <br />
-
-                <span className="text-white/40">
-                  DELIVER SERVICES.
-                </span>
-
+                <span className="text-white/40">DELIVER SERVICES.</span>
                 <br />
-
                 WE BUILD GROWTH.
               </h2>
 
@@ -815,14 +574,9 @@ function Services() {
                     hover:bg-white/[0.06]
                   "
                 >
-                  <CheckCircle2
-                    size={20}
-                    className="shrink-0 text-white/70"
-                  />
+                  <CheckCircle2 size={20} className="shrink-0 text-white/70" />
 
-                  <span className="text-sm text-white/70">
-                    {item}
-                  </span>
+                  <span className="text-sm text-white/70">{item}</span>
                 </div>
               ))}
             </div>
@@ -943,7 +697,6 @@ function Services() {
               "
             >
               Let's Get Started
-
               <ArrowRight
                 size={18}
                 className="

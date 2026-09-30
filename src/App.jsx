@@ -18,6 +18,18 @@ import BlogReader from "./Pages/BlogReader";
 import ScrollToTop from "./Components/ScrollToTop";
 import Preloader from "./Components/Common/Preloader";
 
+// SEO
+import SEO from "./Pages/Services/SEO";
+import SMM from "./Pages/Services/SMM";
+import GraphicDesign from "./Pages/Services/GD";
+import AppDevelopment from "./Pages/Services/AD";
+import WebsiteDevelopment from "./Pages/Services/WD";
+import AIVideoCreations from "./Pages/Services/AVC";
+import LogoDesign from "./Pages/Services/LD";
+import BusinessConsultation from "./Pages/Services/BC";
+import CustomDigitalMarketingServices from "./Pages/Services/CDM";
+import BrandIdentity from "./Pages/Services/BI";
+
 function App() {
   // const lenis = new Lenis({
   //   autoRaf: true,
@@ -46,6 +58,17 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact_us" element={<Contact />} />
         <Route path="/blogs/read_blog/:index" element={<BlogReader />} />
+
+        <Route path="/services/seo" element={<SEO />} />
+        <Route path="/services/smm" element={<SMM />} />
+        <Route path="/services/logo_design" element={<LogoDesign />} />
+        <Route path="/services/brand_identity" element={<BrandIdentity />} />
+        <Route path="/services/app_developkment" element={<AppDevelopment />} />
+        <Route path="/services/graphics_designing" element={<GraphicDesign />} />
+        <Route path="/services/web_development" element={<WebsiteDevelopment />} />
+        <Route path="/services/ai_video_creation" element={<AIVideoCreations />} />
+        <Route path="/services/business_consultation" element={<BusinessConsultation />} />
+        <Route path="/services/custom_digital_marketing" element={<CustomDigitalMarketingServices />} />
       </Routes>
     </BrowserRouter>
   );

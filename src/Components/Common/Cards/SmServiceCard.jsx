@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 const SmServiceCard = forwardRef(
   (
-    { icon: Icon, title, description, onMoreInfo, className, ...props },
+    { icon: Icon, title, description, onReadMore, className, ...props },
     ref,
   ) => {
     return (
@@ -64,7 +64,7 @@ const SmServiceCard = forwardRef(
           "
         >
           <button
-            onClick={onMoreInfo}
+            onClick={onReadMore}
             className="
             cursor-pointer
             rounded-xl
@@ -96,7 +96,7 @@ const SmServiceCard = forwardRef(
             focus:ring-[#2BB3FF40]
             "
           >
-            More Info
+            Read Now
           </button>
 
           <Link
